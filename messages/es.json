@@ -1,0 +1,967 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "duel": "Duelo / Jugar",
+    "howItWorks": "Cómo Funciona",
+    "bounties": "Recompensas",
+    "about": "Acerca de"
+  },
+  "navbar": {
+    "cta": "Entrar al Duelo",
+    "soundLabel": "Alternar sonido",
+    "settingsLabel": "Configuración del juego",
+    "menuLabel": "Abrir menú"
+  },
+  "footer": {
+    "tagline": "El entrenamiento arcade táctil Cyber-Western que forma la próxima generación de ingenieros de software a prueba de balas.",
+    "telemetryHeading": "Telegraph Deck",
+    "navigationHeading": "Navegación",
+    "advisoryHeading": "Asesoría Forajida",
+    "advisoryText": "Alta concentración de errores cerca de Semicolon Gulch. Se aconseja a los ingenieros verificar todos los cierres de paréntesis antes del anochecer.",
+    "systemTelemetryLabel": "Telemetría del Sistema V3.1",
+    "copyright": "© 2025 Frontera Cyber-Western. Todos los códigos asegurados.",
+    "telemetry": [
+      {
+        "label": "Host",
+        "value": "Frontier-Node-09"
+      },
+      {
+        "label": "Latency",
+        "value": "14ms (Dodge-Net)"
+      },
+      {
+        "label": "Compiler",
+        "value": "PY 3.12 / Node 20"
+      },
+      {
+        "label": "Integrity",
+        "value": "99.98% Compile_OK"
+      }
+    ],
+    "legalLinks": [
+      "Terms of Patrol",
+      "Encryption Protocol",
+      "Dispatch Comms"
+    ]
+  },
+  "howItWorks": {
+    "badge1": "[ DIRECTIVA: TELEGRAPH_SEC_09 ]",
+    "badge2": "DUAL RUNTIME: PY3 + ES2024",
+    "heroTitlePrefix": "Inducción de Diputado: Cómo Domar el",
+    "heroTitleAccent": "Código Fronterizo",
+    "heroSubtitle": "Los forajidos se han infiltrado en las tierras baldías, plantando errores de sintaxis corrupta en líneas de diligencias críticas y terminales ferroviarias. Este manual desglosa exactamente cómo funciona un duelo de Alguacil de Sintaxis, desde la primera alerta de fallo hasta el veredicto final del telegrama.",
+    "unitTitle": "UNIDAD: MECHA-ALGUACIL",
+    "unitOnline": "EN LÍNEA 99.8%",
+    "unitName": "BRASS-01 EXPLORADOR",
+    "unitStatus": "LISTO PARA PATRULLA FRONTERIZA",
+    "chassisLabel": "CHASIS",
+    "chassisValue": "REFORZADO CON FENOL",
+    "ammoLabel": "MUNICIÓN",
+    "ammoValue": "TOKENS LIMPIOS",
+    "ctaLabel": "Comenzar a Jugar",
+    "stats": [
+      {
+        "value": "15.0 SEC",
+        "label": "Round Duration"
+      },
+      {
+        "value": "Real-Time Linter",
+        "label": "Test Suite"
+      },
+      {
+        "value": "x5.0 Bounty",
+        "label": "Max Streak"
+      }
+    ]
+  },
+  "mechanics": {
+    "sectionLabel": "[ 01. REGLAS DE COMBATE DE CÓDIGO ]",
+    "sectionTitle": "Los 5 Pasos de los Duelos de Código Fronterizo",
+    "protocolTag": "PROTOCOLO OPERATIVO ESTÁNDAR",
+    "steps": [
+      {
+        "tag": "STEP 01",
+        "title": "Spot The Outlaw Glitch",
+        "desc": "Every duel begins with an outlaw code ambush. Syntax traps include omitted colons, rogue curly braces, tab and space indentation traps, and unclosed quotation strings.",
+        "footer": "REAL RUNTIME HAZARDS"
+      },
+      {
+        "tag": "STEP 02",
+        "title": "Quick-Draw 4 Options",
+        "desc": "Your holster carries four multiple-choice replacement tokens. Trigger your shot with hotkeys 1 through 4 or A through D before the outlaw escapes.",
+        "footer": "FOUR-WAY HOLSTER"
+      },
+      {
+        "tag": "STEP 03",
+        "title": "High-Noon Countdown",
+        "desc": "The sun creeps across the canyon on a segmented fuel gauge. Color drains from cyan to amber, flashing crimson under twenty five percent fuel remaining.",
+        "footer": "HIGH-NOON TIMER TICK"
+      },
+      {
+        "tag": "STEP 04",
+        "title": "Robot Desert Trek",
+        "desc": "Every solved bug pumps voltage through Deputy Rusty. Watch the brass automaton stride across the stratum map, clearing outposts and loops on the way to Dodge City.",
+        "footer": "ASCEND THE BADLANDS"
+      },
+      {
+        "tag": "STEP 05",
+        "title": "The Telegraph Explanation",
+        "desc": "Victory is not just speed, it is mastery. After every round, a telegraph dispatch prints a differential comparing your line against the correct fix, followed by a plain-language breakdown of the rule.",
+        "footer": "DEEP INTEL RETENTION"
+      }
+    ]
+  },
+  "hotkeys": {
+    "sectionLabel": "[ MAPA DE HARDWARE ]",
+    "sectionTitle": "Atajos de Teclado y Funda de Microswitch",
+    "protocolTag": "ENTRADAS DE LATENCIA CERO",
+    "keys": [
+      {
+        "combo": "1 - 4",
+        "label": "Instant Draw Options"
+      },
+      {
+        "combo": "A - D",
+        "label": "Alt Holster Keys"
+      },
+      {
+        "combo": "SPACE",
+        "label": "Next Outlaw Snippet"
+      },
+      {
+        "combo": "T",
+        "label": "Toggle Telegraph Log"
+      },
+      {
+        "combo": "M",
+        "label": "Mute Saloon Audio"
+      },
+      {
+        "combo": "ESC",
+        "label": "Ceasefire / Pause Duel"
+      }
+    ]
+  },
+  "syntaxRef": {
+    "sectionLabel": "[ 02. MANUAL DE CAMPO ]",
+    "sectionTitle": "Clasificación de Errores: Python vs JavaScript",
+    "protocolTag": "CURRÍCULO V3.1",
+    "syntaxErrorLabel": "ERROR DE SINTAXIS",
+    "logicTrapLabel": "TRAMPA LÓGICA",
+    "rows": [
+      {
+        "language": "PYTHON",
+        "runtime": "PYTHON 3.12",
+        "syntaxErrorTitle": "Missing Colon vs Indentation Drift",
+        "syntaxError": "Parser fails before bytecode generation, halting immediately when def, if, for, or class headers are missing a trailing colon.",
+        "logicTrap": "Execution proceeds, but code runs outside its intended block scope, silently leaking state between branches."
+      },
+      {
+        "language": "JAVASCRIPT",
+        "runtime": "ECMASCRIPT 2024",
+        "syntaxErrorTitle": "Coercion vs Scope Leak",
+        "syntaxError": "An uncaught SyntaxError halts the entire script thread, typically triggered by an unexpected token or unterminated string literal.",
+        "logicTrap": "Loose equality and type coercion let \"42\" + 1 evaluate to \"421\" without ever throwing, destabilizing downstream math."
+      }
+    ]
+  },
+  "faq": {
+    "sectionLabel": "[ 03. PREGUNTAS FRECUENTES DEL ALGUACIL ]",
+    "sectionTitle": "Reglas de Puntuación, XP y Progresión",
+    "protocolTag": "LEE ANTES DE DUELO",
+    "items": [
+      {
+        "q": "How is my bounty score calculated?",
+        "a": "Each correct fix pays out a base bounty plus a speed bonus. Draw a fix in under three seconds and you earn the Dead-Eye multiplier, stacking your payout until you miss or time out."
+      },
+      {
+        "q": "What is XP and how do I earn it?",
+        "a": "XP accrues per cleared snippet, scaled by difficulty tier. Logic traps and recursion bugs pay more XP than a first-outpost colon fix, rewarding engineers who tackle harder badlands."
+      },
+      {
+        "q": "How does the streak combo work?",
+        "a": "Consecutive correct draws build a combo multiplier shown in the HUD. One wrong holster trigger or a blown timer resets the streak back to one, so steady accuracy beats reckless speed."
+      },
+      {
+        "q": "What happens if the timer runs out?",
+        "a": "A timeout counts as a missed draw. Deputy Rusty stalls in place, your streak resets, and the correct fix is revealed in the telegraph explanation so you can study it before the next outlaw."
+      },
+      {
+        "q": "How do I rank up in sector progression?",
+        "a": "Clearing all duels in a sector unlocks the next stretch of desert. Sector difficulty escalates from Semicolon Gulch through Canyon Recursion, introducing harder error classes as Deputy Rusty advances."
+      }
+    ]
+  },
+  "cta": {
+    "label": "[ ARENA FRONTERIZA LISTA ]",
+    "title": "El desierto no se cruza solo",
+    "desc": "El Alguacil Rusty está estacionado en el Sector de Avanzada 1, vapor en marcha. Acércate a la consola, saca tu primer arreglo de sintaxis y reclama tu estrella de alguacil novato.",
+    "button": "Entra a la Arena de Duelo",
+    "eyebrow": "Sin Más Demoras",
+    "subtitle": "Carga una recompensa fresca, pon el reloj en marcha y ve cuán lejos puede llegar tu equipo hoy.",
+    "primary": "Entra al Duelo",
+    "secondary": "Explorar Recompensas"
+  },
+  "bounties": {
+    "hero": {
+      "eyebrow": "Se Busca: Forajidos y Reyes de Recompensas",
+      "title": "Recompensas, Insignias y Moneda Fronteriza",
+      "subtitle": "Cada línea arreglada paga en oro fronterizo. Rastrea tus contratos de recompensa escalonados, reclama insignias de alguacil y observa cómo crece tu libro de recompensas con cada compilación limpia."
+    },
+    "gridTitle": "[ 01 // Contratos de Recompensa Activos ]",
+    "gridHeading": "Reclama Tus Contratos de Recompensa Escalonados",
+    "cardTierLabel": "Nivel {tier}",
+    "cardRewardLabel": "Recompensa",
+    "cardViewDetails": "Ver Detalles de Recompensa",
+    "ladderTitle": "[ 02 // Escalera de Rango ]",
+    "ladderHeading": "Escalera de Progresión de Niveles",
+    "ladderSubtitle": "Cada peldaño desbloquea una clase de forajido más peligrosa y un premio más jugoso.",
+    "badgeTitle": "[ 03 // Archivo del Alguacil ]",
+    "badgeHeading": "Galería de Insignias",
+    "badgeSubtitle": "Las medallas ganadas brillan en oro. Las medallas bloqueadas esperan en la bóveda hasta que dispares lo suficientemente rápido.",
+    "ctaEyebrow": "[ Briefing Concluido ]",
+    "ctaHeading": "Tu Corcel Cibernético Te Espera en la Avanzada",
+    "ctaBody": "Los forajidos del código están saboteando activamente los tableros de cambio del ferrocarril de Dodge City. Saca tu arma, verifica tu sintaxis y no te pierdas el mediodía.",
+    "ctaPrimary": "Entra al Duelo del Mediodía",
+    "ctaSecondary": "Volver al Inicio",
+    "modal": {
+      "rewardLabel": "Recompensa de Contrato",
+      "requirementLabel": "Requisito",
+      "progressLabel": "Progreso de Desbloqueo",
+      "statusEarned": "Contrato Cumplido",
+      "statusActive": "Contrato en Progreso",
+      "close": "Cerrar detalles de recompensa"
+    },
+    "eyebrow": "Elige Tu Dificultad",
+    "title": "Tres niveles en el tablero de recompensas",
+    "subtitle": "Cada nivel aprieta el reloj e introduce crímenes más complicados, desde un dos puntos faltante hasta un bucle que nunca se detiene silenciosamente.",
+    "ctaLabel": "Ver tablero de recompensas",
+    "secondsSuffix": "s en el reloj",
+    "summaryStats": [
+      {
+        "id": "purse",
+        "label": "Bounty Purse",
+        "value": "$1,450"
+      },
+      {
+        "id": "streak",
+        "label": "Active Streak",
+        "value": "5x Combo"
+      },
+      {
+        "id": "rank",
+        "label": "Frontier Rank",
+        "value": "#42 Deputy"
+      }
+    ],
+    "items": [
+      {
+        "id": "python-patrol",
+        "tier": "I",
+        "name": "Python Patrol",
+        "description": "Awarded for correctly fixing 25 indentation and colon bugs across Dusty Loop basin without triggering an infinite while-loop.",
+        "reward": "$1,500",
+        "requirementText": "25 / 25 fixes secured",
+        "progress": 100,
+        "earned": true
+      },
+      {
+        "id": "js-gunslinger",
+        "tier": "II",
+        "name": "JS Gunslinger",
+        "description": "Granted after cleaning up missing template literal backticks and mismatched curly braces across 40 ES2024 arrow-function snippets.",
+        "reward": "$3,000",
+        "requirementText": "27 / 40 fixes secured",
+        "progress": 68,
+        "earned": false
+      },
+      {
+        "id": "loop-wrangler",
+        "tier": "III",
+        "name": "Loop Wrangler",
+        "description": "Conquer 10 consecutive recursive and infinite-loop outlaws within 45 seconds each, under heightened dust-storm time pressure.",
+        "reward": "$5,500",
+        "requirementText": "3 / 10 duel streak",
+        "progress": 30,
+        "earned": false
+      },
+      {
+        "id": "async-outlaw",
+        "tier": "Elite",
+        "name": "Async Outlaw",
+        "description": "The Dodge City Marshall badge. Awarded for resolving async and await promise locks and unhandled frontier exceptions across both runtimes.",
+        "reward": "$10,000",
+        "requirementText": "0 / 15 fixes secured",
+        "progress": 0,
+        "earned": false
+      }
+    ],
+    "ladder": [
+      {
+        "tier": "I",
+        "label": "Tier I: Python Patrol",
+        "requirement": "Fix 25 beginner Python bugs without a single infinite loop.",
+        "unlocked": true
+      },
+      {
+        "tier": "II",
+        "label": "Tier II: JS Gunslinger",
+        "requirement": "Clean up 40 ES2024 syntax traps across arrow functions.",
+        "unlocked": false
+      },
+      {
+        "tier": "III",
+        "label": "Tier III: Loop Wrangler",
+        "requirement": "Chain a 10-duel win streak under 45 seconds each.",
+        "unlocked": false
+      },
+      {
+        "tier": "Elite",
+        "label": "Elite: Async Outlaw",
+        "requirement": "Resolve 15 async and await promise locks with zero timeouts.",
+        "unlocked": false
+      }
+    ],
+    "badges": [
+      {
+        "id": "first-blood",
+        "name": "First Blood",
+        "description": "Fixed your very first outlaw snippet under the high-noon timer.",
+        "earned": true
+      },
+      {
+        "id": "dead-eye-draw",
+        "name": "Dead-Eye Draw",
+        "description": "Answered three bugs correctly in under two seconds each.",
+        "earned": true
+      },
+      {
+        "id": "midnight-rider",
+        "name": "Midnight Rider",
+        "description": "Completed a duel session past the witching hour.",
+        "earned": true
+      },
+      {
+        "id": "no-mercy-combo",
+        "name": "No Mercy Combo",
+        "description": "Built a ten-fix streak without a single miss.",
+        "earned": false
+      },
+      {
+        "id": "sheriffs-star",
+        "name": "Sheriff's Star",
+        "description": "Cleared every sector of the Sonora Basin campaign.",
+        "earned": false
+      },
+      {
+        "id": "ghost-town-legend",
+        "name": "Ghost Town Legend",
+        "description": "Ranked top three on the weekly High Noon leaderboard.",
+        "earned": false
+      }
+    ],
+    "tiers": [
+      {
+        "name": "Rookie Rustler",
+        "seconds": 45,
+        "description": "Single-line slips every beginner hits: missing colons, stray semicolons, unmatched quotes.",
+        "crimeType": "Syntax slip-ups"
+      },
+      {
+        "name": "Deputy",
+        "seconds": 30,
+        "description": "Bugs that only show up once the code runs: off-by-one ranges, wrong comparison operators, bad indentation.",
+        "crimeType": "Logic and indentation"
+      },
+      {
+        "name": "Marshal",
+        "seconds": 20,
+        "description": "The nasty ones: infinite loops, mismatched brackets buried in nested calls, and variables used before they exist.",
+        "crimeType": "Loops and scope"
+      }
+    ]
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "[ SECTOR 00 // EXPEDIENTE & MANIFIESTO ]",
+      "status": "DESPACHO FRONTERIZO EN LÍNEA",
+      "titleLine1": "El Duelo de Código en el Polvo de Neón:",
+      "titleHighlight": "Donde la Sintaxis se Encuentra con la Justicia Fronteriza",
+      "description": "Syntax Sheriff es una arcade de codificación interactiva construida para ingenieros principiantes que abordan Python y JavaScript moderno. Aquí, depurar no es una búsqueda oscura en documentación, es un enfrentamiento rápido de alto riesgo donde los errores son forajidos y cada corrección precisa mantiene el núcleo de vapor del Diputado Rusty pulsando hacia adelante a través del desierto.",
+      "telemetry": {
+        "badge": "TELEMETRÍA DE FUNDA DE SALÓN",
+        "version": "v3.12-PY // ES2024",
+        "timerLabel": "TEMPORIZADOR DE DUELO RÁPIDO",
+        "timerValue": "1.84s RESTANTES",
+        "fileName": "sector_3_dodge_outpost.py",
+        "noticeTitle": "AVISO CRÍTICO DEL COMPILADOR",
+        "noticeBody": "SyntaxError: se esperaba ':' al final de la declaración de función. Dibuja el gatillo de dos puntos correcto para liberar al Diputado Rusty."
+      }
+    },
+    "lore": {
+      "eyebrow": "[ NOMBRE EN CLAVE: MODELO-88 ]",
+      "title": "La Historia y el Diputado Rusty",
+      "subtitle": "Un autómata implacable de latón y silicio que atraviesa ocho tierras baldías fronterizas letales, impulsado exclusivamente por ciclos de compilación limpios y sin errores."
+    },
+    "rusty": {
+      "name": "Diputado Rusty",
+      "statusBadge": "CARGANDO",
+      "description": "Forjado en los silicones abandonados de Dodge City, el Diputado Rusty funciona con una cámara de batería inductiva que no puede quemar combustible fósil. Su tren de engranajes solo pivota hacia adelante cuando un ingeniero analiza correctamente la sintaxis defectuosa. Una respuesta incorrecta desencadena un estancamiento de tormenta de polvo, mientras que una compilación precisa enciende sus pistones de vapor y lo envía otro paso a través del cañón.",
+      "statLabels": {
+        "core": "SALIDA DEL NÚCLEO",
+        "thermal": "TÉRMICA",
+        "energy": "ALMACENAMIENTO DE ENERGÍA",
+        "goal": "OBJETIVO PRINCIPAL"
+      }
+    },
+    "sectors": {
+      "title": "Estratos de Progresión de Sectores",
+      "meta": "8 SECTORES // 240 DUELOS TOTALES",
+      "items": [
+        {
+          "id": "sector-1",
+          "name": "SECTOR 1: SEMICOLON GULCH",
+          "status": "cleared",
+          "statusLabel": "CLEARED",
+          "desc": "JavaScript statement boundaries, escaped strings, and object declaration terminators."
+        },
+        {
+          "id": "sector-2",
+          "name": "SECTOR 2: INDENTATION RIDGE",
+          "status": "active",
+          "statusLabel": "ACTIVE PATROL",
+          "desc": "Python four-space scoping, tabs versus spaces collisions, and nested function alignment."
+        },
+        {
+          "id": "sector-3",
+          "name": "SECTOR 3: DUSTY LOOP BASIN",
+          "status": "locked",
+          "statusLabel": "LOCKED",
+          "desc": "Off-by-one boundary traps, infinite while-condition flags, and break-statement short-circuits."
+        },
+        {
+          "id": "sector-4",
+          "name": "SECTOR 4: CANYON RECURSION",
+          "status": "locked",
+          "statusLabel": "LOCKED",
+          "desc": "Base case omissions, stack overflow badlands, and unreturned recursive branches."
+        },
+        {
+          "id": "sector-5",
+          "name": "SECTOR 5: BRACKET HOLLOW",
+          "status": "locked",
+          "statusLabel": "LOCKED",
+          "desc": "Mismatched curly braces, unclosed parentheses, and bracket-type confusion traps."
+        },
+        {
+          "id": "sector-6",
+          "name": "SECTOR 6: ASYNC MESA",
+          "status": "locked",
+          "statusLabel": "LOCKED",
+          "desc": "Missing await keywords, unhandled promise rejections, and callback ordering ambushes."
+        },
+        {
+          "id": "sector-7",
+          "name": "SECTOR 7: SCOPE LEAK CANYON",
+          "status": "locked",
+          "statusLabel": "LOCKED",
+          "desc": "Variable hoisting traps, shadowed outer scopes, and global leakage from unscoped assignments."
+        },
+        {
+          "id": "sector-8",
+          "name": "SECTOR 8: DODGE CITY VAULT",
+          "status": "locked",
+          "statusLabel": "LOCKED",
+          "desc": "The final marshal exam blending every prior syntax trap into one last high-noon duel."
+        }
+      ]
+    },
+    "credits": {
+      "eyebrow": "[ PUESTO AVANZADO DEV FRONTERIZO ]",
+      "title": "Créditos y Equipo",
+      "subtitle": "Syntax Sheriff fue ensamblado por un pequeño equipo de puesto avanzado de ingenieros, escritores y diseñadores cubiertos de polvo que creen que depurar debe sentirse como un enfrentamiento, no como una tarea.",
+      "items": [
+        {
+          "role": "LEAD GAME DESIGN",
+          "name": "Marla \"Six-Shooter\" Quinn",
+          "blurb": "Designed the quick-draw duel loop and the colon-fault ambush system that turns syntax recall into muscle memory."
+        },
+        {
+          "role": "COMPILER ENGINE",
+          "name": "Desmond Okafor",
+          "blurb": "Built the line-by-line telegraph differential that explains every failed draw in plain language."
+        },
+        {
+          "role": "DESERT ART DIRECTION",
+          "name": "Priya Varma",
+          "blurb": "Painted the canyon strata and brass chassis of Deputy Rusty."
+        },
+        {
+          "role": "SOUND & TELEGRAPH FX",
+          "name": "Tomas Reyes",
+          "blurb": "Crafted the mechanical click of every microswitch trigger and the hiss of a failed compile."
+        },
+        {
+          "role": "NARRATIVE LORE",
+          "name": "Iris Bellweather",
+          "blurb": "Wrote the outlaw bounty dossiers and the field manual's frontier dialect."
+        },
+        {
+          "role": "QA MARSHAL",
+          "name": "Garrett Lune",
+          "blurb": "Ran ten thousand practice duels to make sure every wrong answer still teaches something true."
+        }
+      ]
+    },
+    "contact": {
+      "eyebrow": "[ ENVIAR UN TELEGRAMA ]",
+      "title": "Contactar a la Oficina del Alguacil",
+      "subtitle": "¿Detectaste una recompensa rota, un fragmento que no compila, o solo quieres saludar? Envíanos un telegrama abajo.",
+      "nameLabel": "Tu Nombre",
+      "namePlaceholder": "Alias del Diputado",
+      "emailLabel": "Dirección de Correo Electrónico",
+      "emailPlaceholder": "tu@dodgecity.dev",
+      "messageLabel": "Mensaje",
+      "messagePlaceholder": "Reporta un error, sugiere una recompensa, o solicita un nuevo sector...",
+      "submitButton": "Enviar Telegrama",
+      "successTitle": "TELEGRAMA DESPACHADO",
+      "successBody": "Tu mensaje ha sido enviado a la Oficina del Alguacil. Un diputado pronto te enviará una respuesta.",
+      "resetButton": "Enviar Otro",
+      "channelsTitle": "CANALES DE DESPACHO",
+      "channels": {
+        "0": {
+          "value": "hello@syntaxsheriff.com"
+        }
+      }
+    },
+    "features": [
+      {
+        "tag": "[ 01 // FAULTY SNIPPET ]",
+        "title": "One Authentic Runtime Bug",
+        "desc": "Every duel opens with a short, real snippet carrying a single genuine defect pulled from common beginner mistakes."
+      },
+      {
+        "tag": "[ 02 // SPLIT-SECOND ]",
+        "title": "Four Quick-Draw Options",
+        "desc": "Holster four possible fixes and trigger the right one before the high-noon countdown drains to zero."
+      },
+      {
+        "tag": "[ 03 // TELEGRAPH INTEL ]",
+        "title": "Instant Line-By-Line Diff",
+        "desc": "After every draw, a telegraph dispatch breaks down exactly what broke and why, in plain conversational language."
+      }
+    ]
+  },
+  "hero": {
+    "eyebrow": "Se Busca: Bugs, Vivos o Arreglados",
+    "title": "Dibuja Tu Arreglo Antes de Que Se Ponga el Sol",
+    "subtitle": "Syntax Sheriff te deja una línea de Python o JavaScript buggy en el escritorio. Elige el arreglo, vence el reloj, y marcha tu robot alguacil por el desierto una respuesta correcta a la vez.",
+    "ctaPrimary": "Comenzar un Duelo",
+    "ctaSecondary": "Ver Cómo Funciona",
+    "hudTimerLabel": "Tiempo Restante",
+    "hudBugLabel": "Bug Detectado",
+    "hudLineLabel": "Línea 2",
+    "hudFileName": "sheriff_badge.py"
+  },
+  "mission": {
+    "eyebrow": "Por Qué Syntax Sheriff",
+    "title": "Construido para ojos agudos y manos rápidas",
+    "subtitle": "Sin largas lecciones, sin relleno. Solo fragmentos cortos y honestos con un bug escondido a la vista, y un veredicto en el momento en que te comprometes con una respuesta.",
+    "items": [
+      {
+        "icon": "clock",
+        "title": "Draw before the sun sets",
+        "description": "Every bounty runs on a visible countdown. Hesitate too long and the sun outruns you, just like the real deadlines you'll face writing code for real."
+      },
+      {
+        "icon": "code",
+        "title": "Two dialects, one desert",
+        "description": "Snippets rotate between Python and JavaScript, so you learn to spot the same classic mistakes across both languages."
+      },
+      {
+        "icon": "check",
+        "title": "Every verdict explained",
+        "description": "Right or wrong, a short note breaks down exactly why that line was busted, so the lesson sticks past the round."
+      },
+      {
+        "icon": "bot",
+        "title": "A rig that remembers your aim",
+        "description": "Your robot marshal only moves forward on a correct fix, turning a string of right answers into visible progress across the trail."
+      }
+    ]
+  },
+  "anatomy": {
+    "eyebrow": "La Anatomía de un Duelo",
+    "title": "Cuatro pasos, cada ronda",
+    "subtitle": "Cada recompensa sigue el mismo ritmo rápido, así que pasas tu tiempo leyendo código en lugar de leer instrucciones.",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Read the wanted poster",
+        "description": "A short, real snippet appears, dressed up as a bounty notice with one line already flagged as suspicious."
+      },
+      {
+        "step": "02",
+        "title": "Spot the crime",
+        "description": "Scan the highlighted line for the one bug breaking it: a missing colon, a mismatched bracket, a loop that never ends."
+      },
+      {
+        "step": "03",
+        "title": "Draw your fix",
+        "description": "Choose the correct repair from four quick-draw options before the countdown in the corner hits zero."
+      },
+      {
+        "step": "04",
+        "title": "Watch your rig walk",
+        "description": "Nail it and your robot marshal strides forward across the dunes. Miss it, and the explanation box tells you exactly why."
+      }
+    ]
+  },
+  "sampleDuel": {
+    "eyebrow": "Una Ronda, De Cerca",
+    "title": "Esto es lo que llega a tu escritorio",
+    "subtitle": "Una recompensa real del nivel Rookie Rustler, ya dibujada y resuelta, para que veas todo el proceso antes de jugar.",
+    "previewBadge": "Recompensa de Muestra",
+    "fileName": "sheriff_badge.py",
+    "errorLabel": "SyntaxError: se esperaba ':'",
+    "consoleError": "Archivo \"sheriff_badge.py\", línea 2",
+    "promptLabel": "Elige el arreglo para la línea 2",
+    "explanationTitle": "Por qué esto es incorrecto",
+    "verdictLabel": "Veredicto",
+    "options": [
+      {
+        "id": "A",
+        "code": "if num > 0:",
+        "correct": true,
+        "note": "Correct. Python block headers such as if, for, def, and while must end with a colon before the indented block begins."
+      },
+      {
+        "id": "B",
+        "code": "if num > 0;",
+        "correct": false,
+        "note": "A semicolon isn't valid here. Python opens a block with a colon, not a semicolon."
+      },
+      {
+        "id": "C",
+        "code": "if (num > 0)",
+        "correct": false,
+        "note": "Parentheses around the condition are optional in Python, but the line still needs a trailing colon."
+      },
+      {
+        "id": "D",
+        "code": "if num > 0 then:",
+        "correct": false,
+        "note": "Python has no then keyword. The condition goes straight into the colon."
+      }
+    ]
+  },
+  "trail": {
+    "eyebrow": "Tu Progreso",
+    "title": "El sendero del desierto recuerda cada arreglo",
+    "subtitle": "Cada respuesta correcta acerca tu alguacil un paso más hacia el final del sendero. Cada error solo significa la caja de explicación, no un retroceso.",
+    "legendCleared": "Completado",
+    "legendCurrent": "Actual",
+    "legendLocked": "Bloqueado",
+    "stages": [
+      {
+        "label": "Dusty Trailhead",
+        "status": "cleared"
+      },
+      {
+        "label": "Cactus Flats",
+        "status": "cleared"
+      },
+      {
+        "label": "Rattlesnake Pass",
+        "status": "current"
+      },
+      {
+        "label": "Vulture Ridge",
+        "status": "locked"
+      },
+      {
+        "label": "Canyon of Null",
+        "status": "locked"
+      },
+      {
+        "label": "Sheriff's Rock",
+        "status": "locked"
+      }
+    ]
+  },
+  "duel": {
+    "eyebrow": "Arena de Duelo en Vivo",
+    "title": "Dibuja tu arreglo antes de que se agote el combustible",
+    "subtitle": "Detecta el bug, elige el arreglo, y marcha tu bot diputado por el Desierto de Sintaxis una respuesta correcta a la vez.",
+    "levelLabel": "Etapa",
+    "bountyLabel": "Recompensa",
+    "streakLabel": "Racha",
+    "comboBadge": "Canyon Recursion x3",
+    "resetButton": "Reiniciar Carrera",
+    "consoleHeaderLabel": "Terminal del Diputado",
+    "chooseFixLabel": "Elige la solución",
+    "hotkeyHint": "Presiona 1-4 o A-D para responder rápido.",
+    "timerLabel": "Medidor de Combustible",
+    "difficultyBeginner": "Principiante",
+    "difficultyIntermediate": "Intermedio",
+    "difficultyAdvanced": "Avanzado",
+    "languagePython": "Python",
+    "languageJavaScript": "JavaScript",
+    "correctFeedbackTitle": "Caso cerrado, compañero",
+    "wrongFeedbackTitle": "Esa solución no da en el blanco",
+    "timeoutFeedbackTitle": "El reloj se agotó antes de que dispararas",
+    "bountyEarnedLabel": "+{amount} recompensa depositada",
+    "explanationTitle": "Por Qué Esto Es Incorrecto",
+    "diffBuggyLabel": "Línea con error",
+    "diffFixedLabel": "Línea corregida",
+    "ruleLabel": "Regla",
+    "nextCaseButton": "Siguiente Caso",
+    "optionAria": "Seleccionar opción de solución {hotkey}",
+    "progressMapTitle": "Travesía del Desierto",
+    "progressMapSubtitle": "Cada solución correcta acerca tu bot diputado un paso más hacia la Oficina del Sheriff.",
+    "stageCurrentLabel": "Etapa actual",
+    "stageClearedAria": "Etapa completada",
+    "stageLockedAria": "Etapa bloqueada",
+    "sessionStatsTitle": "Registro de Sesión",
+    "sessionStatsSubtitle": "Sigue tu recompensa total, mejor racha y casos cerrados en esta carrera.",
+    "scoreLabel": "Recompensa total",
+    "bestStreakLabel": "Mejor racha",
+    "casesClearedLabel": "Casos cerrados",
+    "fallbackTitle": "Sin casos cargados",
+    "fallbackBody": "La arena de duelo no encontró casos de código. Intenta actualizar la página.",
+    "stages": [
+      "Dusty Trailhead",
+      "Cactus Flats",
+      "Rattlesnake Ridge",
+      "Canyon Pass",
+      "Ghost Town Gulch",
+      "Sheriff's Office"
+    ],
+    "snippets": [
+      {
+        "id": "snippet-1",
+        "language": "python",
+        "fileName": "patrol_log.py",
+        "lines": [
+          "def check_patrol(hour):",
+          "    if hour > 22",
+          "        return 'lockdown'",
+          "    return 'all clear'"
+        ],
+        "buggyLineNumber": 2,
+        "errorLabel": "SyntaxError",
+        "consoleError": "SyntaxError: expected ':'",
+        "difficulty": "beginner",
+        "bounty": 100,
+        "options": [
+          {
+            "id": "A",
+            "code": "if hour > 22:",
+            "isCorrect": true,
+            "note": "Adds the required colon to open the block."
+          },
+          {
+            "id": "B",
+            "code": "if hour > 22;",
+            "isCorrect": false,
+            "note": "Semicolons don't open Python blocks."
+          },
+          {
+            "id": "C",
+            "code": "if (hour > 22)",
+            "isCorrect": false,
+            "note": "Parentheses alone don't satisfy the colon syntax."
+          },
+          {
+            "id": "D",
+            "code": "if hour > 22 then",
+            "isCorrect": false,
+            "note": "Python has no 'then' keyword."
+          }
+        ],
+        "explanation": "Python block headers like if, for, while, and def always end with a colon before the indented body starts. Without it, the interpreter can't tell where the block begins.",
+        "rule": "Missing colon after a conditional header"
+      },
+      {
+        "id": "snippet-2",
+        "language": "javascript",
+        "fileName": "vault_lock.js",
+        "lines": [
+          "function openVault(code) {",
+          "  if (code === 4817 {",
+          "    return true;",
+          "  }",
+          "  return false;",
+          "}"
+        ],
+        "buggyLineNumber": 2,
+        "errorLabel": "SyntaxError",
+        "consoleError": "SyntaxError: missing ) after condition",
+        "difficulty": "beginner",
+        "bounty": 120,
+        "options": [
+          {
+            "id": "A",
+            "code": "if (code === 4817) {",
+            "isCorrect": true,
+            "note": "Closes the parenthesis before the block opens."
+          },
+          {
+            "id": "B",
+            "code": "if (code === 4817) }",
+            "isCorrect": false,
+            "note": "Swaps the wrong bracket at the wrong spot."
+          },
+          {
+            "id": "C",
+            "code": "if code === 4817) {",
+            "isCorrect": false,
+            "note": "Drops the opening parenthesis entirely."
+          },
+          {
+            "id": "D",
+            "code": "if (code === 4817 {}",
+            "isCorrect": false,
+            "note": "Still never closes the condition's parenthesis."
+          }
+        ],
+        "explanation": "Every opening parenthesis in a condition needs a matching close before the block's curly brace opens. This snippet closes the brace but never closes the parenthesis, so the parser can't find the end of the condition.",
+        "rule": "Unclosed parenthesis in a condition"
+      },
+      {
+        "id": "snippet-3",
+        "language": "python",
+        "fileName": "tumbleweed_counter.py",
+        "lines": [
+          "count = 0",
+          "while count < 5:",
+          "    print('tumbleweed rolls by')",
+          "    count = count"
+        ],
+        "buggyLineNumber": 4,
+        "errorLabel": "Logic Error",
+        "consoleError": "RunningIndefinitely: loop condition never changes",
+        "difficulty": "intermediate",
+        "bounty": 150,
+        "options": [
+          {
+            "id": "A",
+            "code": "    count += 1",
+            "isCorrect": true,
+            "note": "Increments count so the loop eventually ends."
+          },
+          {
+            "id": "B",
+            "code": "    count = count",
+            "isCorrect": false,
+            "note": "Leaves count completely unchanged."
+          },
+          {
+            "id": "C",
+            "code": "    count == count + 1",
+            "isCorrect": false,
+            "note": "A comparison, not an assignment, so nothing updates."
+          },
+          {
+            "id": "D",
+            "code": "    print(count)",
+            "isCorrect": false,
+            "note": "Prints a value but never changes it."
+          }
+        ],
+        "explanation": "The loop condition depends on count, but the body never changes its value, so the while condition stays true forever. Incrementing count each iteration lets the loop eventually exit.",
+        "rule": "Loop variable never updated (infinite loop)"
+      },
+      {
+        "id": "snippet-4",
+        "language": "javascript",
+        "fileName": "saloon_door.js",
+        "lines": [
+          "function isSheriff(role) {",
+          "  if (role = 'sheriff') {",
+          "    return 'Welcome, Sheriff.';",
+          "  }",
+          "  return 'Access denied.';",
+          "}"
+        ],
+        "buggyLineNumber": 2,
+        "errorLabel": "Logic Error",
+        "consoleError": "Warning: assignment used as a truthy condition",
+        "difficulty": "intermediate",
+        "bounty": 150,
+        "options": [
+          {
+            "id": "A",
+            "code": "  if (role === 'sheriff') {",
+            "isCorrect": true,
+            "note": "Compares by value and type instead of assigning."
+          },
+          {
+            "id": "B",
+            "code": "  if (role == 'sheriff') {",
+            "isCorrect": false,
+            "note": "Fixes the assignment but still allows loose type coercion."
+          },
+          {
+            "id": "C",
+            "code": "  if (role = 'Sheriff') {",
+            "isCorrect": false,
+            "note": "Still an assignment, just with different capitalization."
+          },
+          {
+            "id": "D",
+            "code": "  if (role != 'sheriff') {",
+            "isCorrect": false,
+            "note": "Inverts the logic entirely."
+          }
+        ],
+        "explanation": "A single '=' performs assignment, not comparison. The condition always evaluates truthy because the assignment itself returns the assigned value, so every caller is treated as a sheriff. Use '===' to compare by value and type.",
+        "rule": "Assignment operator used instead of comparison"
+      },
+      {
+        "id": "snippet-5",
+        "language": "python",
+        "fileName": "fence_posts.py",
+        "lines": [
+          "posts = []",
+          "for i in range(1, 5):",
+          "    posts.append(f'post-{i}')",
+          "print(len(posts))"
+        ],
+        "buggyLineNumber": 2,
+        "errorLabel": "Logic Error",
+        "consoleError": "AssertionError: expected 5, got 4",
+        "difficulty": "advanced",
+        "bounty": 180,
+        "options": [
+          {
+            "id": "A",
+            "code": "for i in range(1, 6):",
+            "isCorrect": true,
+            "note": "Extends the stop value so 5 posts are built."
+          },
+          {
+            "id": "B",
+            "code": "for i in range(0, 5):",
+            "isCorrect": false,
+            "note": "Still produces only 5 values, now mislabeled from zero."
+          },
+          {
+            "id": "C",
+            "code": "for i in range(1, 5 + 1, 2):",
+            "isCorrect": false,
+            "note": "Skips every other post with a step of 2."
+          },
+          {
+            "id": "D",
+            "code": "for i in range(1, 5):",
+            "isCorrect": false,
+            "note": "Identical to the original buggy line."
+          }
+        ],
+        "explanation": "range(1, 5) stops before 5, producing only four values: 1, 2, 3, 4. To get five posts numbered 1 through 5, the stop value must be 6, since Python's range always excludes its endpoint.",
+        "rule": "Range stop value excludes the final number (off-by-one)"
+      }
+    ]
+  }
+}
