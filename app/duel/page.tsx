@@ -46,6 +46,12 @@ function getTimerColorClasses(fraction: number): string {
   return "bg-red-500";
 }
 
+function getTimerGlowClasses(fraction: number): string {
+  if (fraction > 0.6) return "shadow-[0_0_8px_0_rgba(34,211,238,0.6)]";
+  if (fraction > 0.3) return "shadow-[0_0_8px_0_rgba(251,191,36,0.6)]";
+  return "shadow-[0_0_10px_1px_rgba(239,68,68,0.7)] text-red-500 pulse-glow";
+}
+
 export default function DuelPage() {
   const t = useTranslations();
 
@@ -171,6 +177,8 @@ export default function DuelPage() {
   const fraction = timeLeft / TIMER_DURATION_SECONDS;
   const filledSegments = Math.max(0, Math.round(fraction * TIMER_SEGMENT_COUNT));
   const timerColorClasses = getTimerColorClasses(fraction);
+  const timerGlowClasses = getTimerGlowClasses(fraction);
+  const isTimerLow = fraction <= 0.3;
   const robotPositionPct = stages.length > 1 ? (safeStageIndex / (stages.length - 1)) * 100 : 0;
 
   return (
@@ -195,18 +203,18 @@ export default function DuelPage() {
                 <span className="text-xs text-[hsl(var(--muted-foreground))]">{t("duel.levelLabel")}</span>
                 <span className="text-sm font-semibold">{stages[safeStageIndex] ?? ""}</span>
               </div>
-              <div className="flex items-center gap-2 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] px-4 py-2.5 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.12)]">
+              <div className="flex items-center gap-2 rounded-xl border border-[var(--accent)]/30 bg-[hsl(var(--card))] px-4 py-2.5 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.12),0_0_12px_-2px_rgba(99,224,251,0.35)] transition-shadow duration-300">
                 <Star className="h-4 w-4 text-[var(--accent)]" aria-hidden="true" />
                 <span className="text-xs text-[hsl(var(--muted-foreground))]">{t("duel.bountyLabel")}</span>
                 <span className="text-sm font-semibold text-[var(--accent)]">{currentSnippet.bounty}</span>
               </div>
-              <div className="flex items-center gap-2 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] px-4 py-2.5 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.12)]">
+              <div className="flex items-center gap-2 rounded-xl border border-amber-400/30 bg-[hsl(var(--card))] px-4 py-2.5 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.12),0_0_12px_-2px_rgba(251,191,36,0.3)] transition-shadow duration-300">
                 <Sparkles className="h-4 w-4 text-amber-400" aria-hidden="true" />
                 <span className="text-xs text-[hsl(var(--muted-foreground))]">{t("duel.streakLabel")}</span>
                 <span className="text-sm font-semibold">{streak}</span>
               </div>
               {streak >= COMBO_STREAK_THRESHOLD && (
-                <div className="flex animate-pulse items-center gap-2 rounded-xl border border-[var(--accent)]/40 bg-[var(--accent)]/10 px-4 py-2.5 text-[var(--accent)]">
+                <div className="pulse-glow flex items-center gap-2 rounded-xl border border-[var(--accent)]/40 bg-[var(--accent)]/10 px-4 py-2.5 text-[var(--accent)] shadow-[0_0_14px_-2px_rgba(99,224,251,0.6)]">
                   <GitBranch className="h-4 w-4" aria-hidden="true" />
                   <span className="text-xs font-semibold uppercase tracking-wide">{t("duel.comboBadge")}</span>
                 </div>
@@ -214,7 +222,7 @@ export default function DuelPage() {
               <button
                 type="button"
                 onClick={handleReset}
-                className="ml-auto rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] px-4 py-2.5 text-xs font-semibold text-[hsl(var(--muted-foreground))] transition-colors duration-300 hover:text-[hsl(var(--foreground))] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--accent)]"
+                className="ml-auto rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] px-4 py-2.5 text-xs font-semibold text-[hsl(var(--muted-foreground))] transition-all duration-300 hover:-translate-y-0.5 hover:text-[hsl(var(--foreground))] hover:shadow-[0_8px_16px_-6px_rgba(0,0,0,0.3)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--accent)]"
               >
                 {t("duel.resetButton")}
               </button>
@@ -229,8 +237,12 @@ export default function DuelPage() {
               <h2 id="console-heading" className="sr-only">
                 {t("duel.consoleHeaderLabel")}
               </h2>
-              <div className="overflow-hidden rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.12)]">
-                <div className="flex flex-wrap items-center gap-2 border-b border-[hsl(var(--border))] bg-black/5 px-4 py-3">
+              <div className="relative overflow-hidden rounded-2xl border border-[var(--accent)]/20 bg-[hsl(var(--card))]/95 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.12),0_0_0_1px_rgba(99,224,251,0.04),0_0_40px_-16px_rgba(99,224,251,0.25)] backdrop-blur-sm">
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)]/60 to-transparent"
+                />
+                <div className="flex flex-wrap items-center gap-2 border-b border-[hsl(var(--border))] bg-black/10 px-4 py-3">
                   <Terminal className="h-4 w-4 text-[hsl(var(--muted-foreground))]" aria-hidden="true" />
                   <FileCode className="h-4 w-4 text-[hsl(var(--muted-foreground))]" aria-hidden="true" />
                   <span className="font-mono text-xs text-[hsl(var(--muted-foreground))]">{currentSnippet.fileName}</span>
@@ -247,7 +259,7 @@ export default function DuelPage() {
                   >
                     {difficultyLabels[currentSnippet.difficulty]}
                   </span>
-                  <span className="ml-auto inline-flex items-center gap-1 rounded-full bg-red-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-red-500">
+                  <span className="ml-auto inline-flex items-center gap-1 rounded-full bg-red-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-red-500 shadow-[0_0_8px_-2px_rgba(239,68,68,0.5)]">
                     <AlertTriangle className="h-3 w-3" aria-hidden="true" />
                     {currentSnippet.errorLabel}
                   </span>
@@ -262,7 +274,7 @@ export default function DuelPage() {
                         key={`${currentSnippet.id}-line-${idx}`}
                         className={cn(
                           "flex gap-4 rounded px-2 py-0.5",
-                          isBuggy && "border-l-4 border-red-500 bg-red-500/10",
+                          isBuggy && "border-l-4 border-red-500 bg-red-500/10 shadow-[inset_0_0_12px_-6px_rgba(239,68,68,0.6)]",
                         )}
                       >
                         <span className="w-5 shrink-0 select-none text-right text-[hsl(var(--muted-foreground))]">
@@ -277,7 +289,7 @@ export default function DuelPage() {
                   })}
                 </pre>
 
-                <div className="border-t border-[hsl(var(--border))] bg-black/5 px-4 py-3 font-mono text-xs text-red-500">
+                <div className="border-t border-[hsl(var(--border))] bg-black/10 px-4 py-3 font-mono text-xs text-red-500">
                   {currentSnippet.consoleError}
                 </div>
               </div>
@@ -287,18 +299,18 @@ export default function DuelPage() {
               <div className="mb-4">
                 <div className="mb-2 flex items-center justify-between text-xs text-[hsl(var(--muted-foreground))]">
                   <span className="inline-flex items-center gap-1.5">
-                    <Clock className="h-3.5 w-3.5" aria-hidden="true" />
+                    <Clock className={cn("h-3.5 w-3.5", isTimerLow && "text-red-500")} aria-hidden="true" />
                     {t("duel.timerLabel")}
                   </span>
-                  <span className="font-mono">{timeLeft}s</span>
+                  <span className={cn("font-mono", isTimerLow ? "text-red-500" : "text-[hsl(var(--foreground))]")}>{timeLeft}s</span>
                 </div>
                 <div className="flex gap-1">
                   {Array.from({ length: TIMER_SEGMENT_COUNT }, (_, i) => (
                     <div
                       key={`segment-${i}`}
                       className={cn(
-                        "h-2 flex-1 rounded-full transition-colors duration-300",
-                        i < filledSegments ? timerColorClasses : "bg-black/10",
+                        "h-2 flex-1 rounded-full transition-all duration-300",
+                        i < filledSegments ? cn(timerColorClasses, timerGlowClasses) : "bg-black/10",
                       )}
                     />
                   ))}
@@ -321,9 +333,9 @@ export default function DuelPage() {
                       className={cn(
                         "group relative rounded-xl border p-3 text-left font-mono text-xs transition-all duration-300 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--accent)]",
                         !answered &&
-                          "border-[hsl(var(--border))] bg-[hsl(var(--card))] hover:-translate-y-0.5 hover:border-[var(--accent)]/40 hover:shadow-[0_8px_24px_-8px_rgba(0,0,0,0.2)]",
-                        showCorrect && "border-emerald-500 bg-emerald-500/10",
-                        showWrongSelected && "border-red-500 bg-red-500/10",
+                          "border-[hsl(var(--border))] bg-[hsl(var(--card))] hover:-translate-y-1 hover:border-[var(--accent)]/50 hover:shadow-[0_12px_28px_-10px_rgba(0,0,0,0.35),0_0_16px_-4px_rgba(99,224,251,0.3)]",
+                        showCorrect && "border-emerald-500 bg-emerald-500/10 shadow-[0_0_20px_-4px_rgba(16,185,129,0.6)]",
+                        showWrongSelected && "border-red-500 bg-red-500/10 shadow-[0_0_20px_-4px_rgba(239,68,68,0.6)]",
                         answered && !showCorrect && !showWrongSelected && "border-[hsl(var(--border))] opacity-40",
                       )}
                     >
@@ -356,7 +368,14 @@ export default function DuelPage() {
             <p className="mt-1 text-sm text-[hsl(var(--muted-foreground))]">{t("duel.progressMapSubtitle")}</p>
 
             <div className="relative mt-10 pb-10">
-              <div className="h-1 w-full rounded-full bg-black/10" />
+              <div className="h-1 w-full overflow-hidden rounded-full bg-black/10">
+                <motion.div
+                  className="h-full rounded-full bg-[var(--accent)]/50"
+                  initial={false}
+                  animate={{ width: `${robotPositionPct}%` }}
+                  transition={{ type: "spring", stiffness: 120, damping: 18 }}
+                />
+              </div>
               <motion.div
                 className="absolute -top-4"
                 initial={false}
@@ -364,7 +383,8 @@ export default function DuelPage() {
                 transition={{ type: "spring", stiffness: 120, damping: 18 }}
                 style={{ transform: "translateX(-50%)" }}
               >
-                <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--accent)] shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]">
+                <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--accent)] shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3),0_0_18px_-2px_rgba(99,224,251,0.7)]">
+                  <div className="absolute inset-0 -z-10 rounded-xl bg-[var(--accent)]/40 blur-md" />
                   <div className="absolute top-1.5 flex gap-1.5">
                     <span className="h-1.5 w-1.5 rounded-full bg-[hsl(var(--background))]" />
                     <span className="h-1.5 w-1.5 rounded-full bg-[hsl(var(--background))]" />
@@ -387,9 +407,9 @@ export default function DuelPage() {
                               : t("duel.stageLockedAria")
                         }
                         className={cn(
-                          "h-3 w-3 rounded-full border-2",
-                          status === "cleared" && "border-[var(--accent)] bg-[var(--accent)]",
-                          status === "current" && "border-[var(--accent)] bg-transparent",
+                          "h-3 w-3 rounded-full border-2 transition-shadow duration-300",
+                          status === "cleared" && "border-[var(--accent)] bg-[var(--accent)] shadow-[0_0_8px_-1px_rgba(99,224,251,0.7)]",
+                          status === "current" && "border-[var(--accent)] bg-transparent shadow-[0_0_10px_-1px_rgba(99,224,251,0.6)]",
                           status === "locked" && "border-black/20 bg-transparent",
                         )}
                       />
@@ -417,17 +437,17 @@ export default function DuelPage() {
             </h2>
             <p className="mt-1 text-sm text-[hsl(var(--muted-foreground))]">{t("duel.sessionStatsSubtitle")}</p>
             <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
-              <div className="rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 p-6 sm:col-span-2">
+              <div className="rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 p-6 shadow-[0_0_24px_-8px_rgba(99,224,251,0.35)] sm:col-span-2">
                 <Star className="h-5 w-5 text-[var(--accent)]" aria-hidden="true" />
                 <div className="mt-3 text-4xl font-bold text-[var(--accent)]">{score}</div>
                 <div className="mt-1 text-sm text-[hsl(var(--muted-foreground))]">{t("duel.scoreLabel")}</div>
               </div>
-              <div className="rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-6">
+              <div className="rounded-2xl border border-amber-400/20 bg-[hsl(var(--card))] p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.12),0_0_18px_-8px_rgba(251,191,36,0.3)]">
                 <Sparkles className="h-5 w-5 text-amber-400" aria-hidden="true" />
                 <div className="mt-3 text-3xl font-bold">{bestStreak}</div>
                 <div className="mt-1 text-sm text-[hsl(var(--muted-foreground))]">{t("duel.bestStreakLabel")}</div>
               </div>
-              <div className="rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-6 sm:col-span-3">
+              <div className="rounded-2xl border border-emerald-500/20 bg-[hsl(var(--card))] p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.12)] sm:col-span-3">
                 <Check className="h-5 w-5 text-emerald-500" aria-hidden="true" />
                 <div className="mt-3 text-3xl font-bold">{casesCleared}</div>
                 <div className="mt-1 text-sm text-[hsl(var(--muted-foreground))]">{t("duel.casesClearedLabel")}</div>
@@ -440,7 +460,7 @@ export default function DuelPage() {
       <AnimatePresence>
         {answered && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 p-4 sm:items-center"
+            className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 p-4 backdrop-blur-sm sm:items-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -449,18 +469,18 @@ export default function DuelPage() {
             aria-labelledby="explanation-title"
           >
             <motion.div
-              className="w-full max-w-xl rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.12)] sm:p-8"
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="w-full max-w-xl rounded-2xl border border-[var(--accent)]/20 bg-[hsl(var(--card))] p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_60px_-12px_rgba(0,0,0,0.5),0_0_40px_-12px_rgba(99,224,251,0.25)] sm:p-8"
+              initial={{ opacity: 0, scale: 0.92, y: 24 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+              exit={{ opacity: 0, scale: 0.94, y: 16 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             >
               <div
                 className={cn(
                   "mb-4 flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold",
-                  isTimeout && "bg-red-500/10 text-red-500",
-                  !isTimeout && selectedId && currentSnippet.options.find((o) => o.id === selectedId)?.isCorrect && "bg-emerald-500/10 text-emerald-500",
-                  !isTimeout && selectedId && !currentSnippet.options.find((o) => o.id === selectedId)?.isCorrect && "bg-red-500/10 text-red-500",
+                  isTimeout && "bg-red-500/10 text-red-500 shadow-[0_0_16px_-6px_rgba(239,68,68,0.5)]",
+                  !isTimeout && selectedId && currentSnippet.options.find((o) => o.id === selectedId)?.isCorrect && "bg-emerald-500/10 text-emerald-500 shadow-[0_0_16px_-6px_rgba(16,185,129,0.5)]",
+                  !isTimeout && selectedId && !currentSnippet.options.find((o) => o.id === selectedId)?.isCorrect && "bg-red-500/10 text-red-500 shadow-[0_0_16px_-6px_rgba(239,68,68,0.5)]",
                 )}
               >
                 {isTimeout ? (
@@ -486,7 +506,7 @@ export default function DuelPage() {
                 {t("duel.explanationTitle")}
               </h3>
 
-              <div className="mt-4 space-y-1.5 rounded-xl bg-black/5 p-4 font-mono text-xs">
+              <div className="mt-4 space-y-1.5 rounded-xl border border-[hsl(var(--border))]/60 bg-black/20 p-4 font-mono text-xs">
                 <div className="flex gap-2 text-red-500">
                   <span>-</span>
                   <span>{currentSnippet.lines[currentSnippet.buggyLineNumber - 1] ?? ""}</span>
@@ -501,7 +521,7 @@ export default function DuelPage() {
                 <span>{t("duel.diffFixedLabel")}</span>
               </div>
 
-              <span className="mt-4 inline-flex rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/10 px-3 py-1 text-[11px] font-semibold text-[var(--accent)]">
+              <span className="mt-4 inline-flex rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/10 px-3 py-1 text-[11px] font-semibold text-[var(--accent)] shadow-[0_0_10px_-4px_rgba(99,224,251,0.5)]">
                 {t("duel.ruleLabel")}: {currentSnippet.rule}
               </span>
 
@@ -510,7 +530,7 @@ export default function DuelPage() {
               <button
                 type="button"
                 onClick={handleNext}
-                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-[hsl(var(--background))] transition-all duration-300 hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--accent)]"
+                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-[hsl(var(--background))] shadow-[0_0_20px_-6px_rgba(99,224,251,0.6)] transition-all duration-300 hover:-translate-y-0.5 hover:opacity-90 hover:shadow-[0_0_28px_-4px_rgba(99,224,251,0.7)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--accent)]"
               >
                 {t("duel.nextCaseButton")}
                 <ChevronRight className="h-4 w-4" aria-hidden="true" />

@@ -13,13 +13,13 @@
     "menuLabel": "Abrir menú"
   },
   "footer": {
-    "tagline": "El entrenamiento arcade táctil Cyber-Western que forma la próxima generación de ingenieros de software a prueba de balas.",
+    "tagline": "El entrenamiento arcade táctico Cyber-Western que forma la próxima generación de ingenieros de software a prueba de balas.",
     "telemetryHeading": "Telegraph Deck",
     "navigationHeading": "Navegación",
     "advisoryHeading": "Asesoría Forajida",
-    "advisoryText": "Alta concentración de errores cerca de Semicolon Gulch. Se aconseja a los ingenieros verificar todos los cierres de paréntesis antes del anochecer.",
+    "advisoryText": "Alta concentración de bugs cerca de Semicolon Gulch. Se aconseja a los ingenieros verificar todos los cierres de paréntesis antes del anochecer.",
     "systemTelemetryLabel": "Telemetría del Sistema V3.1",
-    "copyright": "© 2025 Frontera Cyber-Western. Todos los códigos asegurados.",
+    "copyright": "© 2025 Cyber-Western Frontier. Todos los códigos asegurados.",
     "telemetry": [
       {
         "label": "Host",
@@ -49,13 +49,13 @@
     "badge2": "DUAL RUNTIME: PY3 + ES2024",
     "heroTitlePrefix": "Inducción de Diputado: Cómo Domar el",
     "heroTitleAccent": "Código Fronterizo",
-    "heroSubtitle": "Los forajidos se han infiltrado en las tierras baldías, plantando errores de sintaxis corrupta en líneas de diligencias críticas y terminales ferroviarias. Este manual desglosa exactamente cómo funciona un duelo de Alguacil de Sintaxis, desde la primera alerta de fallo hasta el veredicto final del telegrama.",
-    "unitTitle": "UNIDAD: MECHA-ALGUACIL",
+    "heroSubtitle": "Los forajidos han infiltrado las tierras baldías, plantando bugs de sintaxis corrupta en líneas de diligencias críticas y terminales ferroviarias. Este manual desglosa exactamente cómo funciona un duelo de Alguacil de Sintaxis, desde la primera alerta de fallo hasta el veredicto final del telegrama.",
+    "unitTitle": "UNIDAD: MECHA-SHERIFF",
     "unitOnline": "EN LÍNEA 99.8%",
-    "unitName": "BRASS-01 EXPLORADOR",
+    "unitName": "BRASS-01 SCOUT",
     "unitStatus": "LISTO PARA PATRULLA FRONTERIZA",
     "chassisLabel": "CHASIS",
-    "chassisValue": "REFORZADO CON FENOL",
+    "chassisValue": "REFORZADO FENÓLICO",
     "ammoLabel": "MUNICIÓN",
     "ammoValue": "TOKENS LIMPIOS",
     "ctaLabel": "Comenzar a Jugar",
@@ -166,7 +166,7 @@
     ]
   },
   "faq": {
-    "sectionLabel": "[ 03. PREGUNTAS FRECUENTES DEL ALGUACIL ]",
+    "sectionLabel": "[ 03. PREGUNTAS FRECUENTES DEL DIPUTADO ]",
     "sectionTitle": "Reglas de Puntuación, XP y Progresión",
     "protocolTag": "LEE ANTES DE DUELO",
     "items": [
@@ -195,10 +195,10 @@
   "cta": {
     "label": "[ ARENA FRONTERIZA LISTA ]",
     "title": "El desierto no se cruza solo",
-    "desc": "El Alguacil Rusty está estacionado en el Sector de Avanzada 1, vapor en marcha. Acércate a la consola, saca tu primer arreglo de sintaxis y reclama tu estrella de alguacil novato.",
+    "desc": "El Diputado Rusty está estacionado en el Sector de Avanzada 1, con el vapor en marcha. Acércate a la consola, saca tu primer arreglo de sintaxis y reclama tu estrella de alguacil novato.",
     "button": "Entra a la Arena de Duelo",
     "eyebrow": "Sin Más Demoras",
-    "subtitle": "Carga una recompensa fresca, pon el reloj en marcha y ve cuán lejos puede llegar tu equipo hoy.",
+    "subtitle": "Carga una recompensa fresca, pon el reloj en marcha y mira cuán lejos puede llegar tu equipo hoy.",
     "primary": "Entra al Duelo",
     "secondary": "Explorar Recompensas"
   },
@@ -206,7 +206,7 @@
     "hero": {
       "eyebrow": "Se Busca: Forajidos y Reyes de Recompensas",
       "title": "Recompensas, Insignias y Moneda Fronteriza",
-      "subtitle": "Cada línea arreglada paga en oro fronterizo. Rastrea tus contratos de recompensa escalonados, reclama insignias de alguacil y observa cómo crece tu libro de recompensas con cada compilación limpia."
+      "subtitle": "Cada línea arreglada paga en oro fronterizo. Rastrea tus contratos de recompensa escalonados, reclama insignias de diputado y observa cómo crece tu libro de recompensas con cada compilación limpia."
     },
     "gridTitle": "[ 01 // Contratos de Recompensa Activos ]",
     "gridHeading": "Reclama Tus Contratos de Recompensa Escalonados",
@@ -216,12 +216,12 @@
     "ladderTitle": "[ 02 // Escalera de Rango ]",
     "ladderHeading": "Escalera de Progresión de Niveles",
     "ladderSubtitle": "Cada peldaño desbloquea una clase de forajido más peligrosa y un premio más jugoso.",
-    "badgeTitle": "[ 03 // Archivo del Alguacil ]",
+    "badgeTitle": "[ 03 // Archivo de Diputados ]",
     "badgeHeading": "Galería de Insignias",
     "badgeSubtitle": "Las medallas ganadas brillan en oro. Las medallas bloqueadas esperan en la bóveda hasta que dispares lo suficientemente rápido.",
     "ctaEyebrow": "[ Briefing Concluido ]",
     "ctaHeading": "Tu Corcel Cibernético Te Espera en la Avanzada",
-    "ctaBody": "Los forajidos del código están saboteando activamente los tableros de cambio del ferrocarril de Dodge City. Saca tu arma, verifica tu sintaxis y no te pierdas el mediodía.",
+    "ctaBody": "Los forajidos de código están saboteando activamente los tableros de cambio del ferrocarril de Dodge City. Saca tu arma, verifica tu sintaxis y no te pierdas el mediodía.",
     "ctaPrimary": "Entra al Duelo del Mediodía",
     "ctaSecondary": "Volver al Inicio",
     "modal": {
@@ -401,7 +401,7 @@
     "lore": {
       "eyebrow": "[ NOMBRE EN CLAVE: MODELO-88 ]",
       "title": "La Historia y el Diputado Rusty",
-      "subtitle": "Un autómata implacable de latón y silicio que atraviesa ocho tierras baldías fronterizas letales, impulsado exclusivamente por ciclos de compilación limpios y sin errores."
+      "subtitle": "Un autómata implacable de latón y silicio que atraviesa ocho tierras fronterizas letales, impulsado exclusivamente por ciclos de compilación limpios y sin errores."
     },
     "rusty": {
       "name": "Diputado Rusty",
@@ -477,7 +477,7 @@
       ]
     },
     "credits": {
-      "eyebrow": "[ PUESTO AVANZADO DEV FRONTERIZO ]",
+      "eyebrow": "[ PUESTO AVANZADO DE DESARROLLO FRONTERIZO ]",
       "title": "Créditos y Equipo",
       "subtitle": "Syntax Sheriff fue ensamblado por un pequeño equipo de puesto avanzado de ingenieros, escritores y diseñadores cubiertos de polvo que creen que depurar debe sentirse como un enfrentamiento, no como una tarea.",
       "items": [
@@ -514,12 +514,12 @@
       ]
     },
     "contact": {
-      "eyebrow": "[ ENVIAR UN TELEGRAMA ]",
-      "title": "Contactar a la Oficina del Alguacil",
-      "subtitle": "¿Detectaste una recompensa rota, un fragmento que no compila, o solo quieres saludar? Envíanos un telegrama abajo.",
+      "eyebrow": "[ ENVÍA UN TELEGRAMA ]",
+      "title": "Contacta la Oficina del Alguacil",
+      "subtitle": "¿Encontraste una recompensa rota, un fragmento que no compila, o solo quieres saludar? Envíanos un telegrama abajo.",
       "nameLabel": "Tu Nombre",
       "namePlaceholder": "Alias del Diputado",
-      "emailLabel": "Dirección de Correo Electrónico",
+      "emailLabel": "Dirección de Correo",
       "emailPlaceholder": "tu@dodgecity.dev",
       "messageLabel": "Mensaje",
       "messagePlaceholder": "Reporta un error, sugiere una recompensa, o solicita un nuevo sector...",
@@ -554,8 +554,8 @@
   },
   "hero": {
     "eyebrow": "Se Busca: Bugs, Vivos o Arreglados",
-    "title": "Dibuja Tu Arreglo Antes de Que Se Ponga el Sol",
-    "subtitle": "Syntax Sheriff te deja una línea de Python o JavaScript buggy en el escritorio. Elige el arreglo, vence el reloj, y marcha tu robot alguacil por el desierto una respuesta correcta a la vez.",
+    "title": "Dibuja Tu Arreglo Antes de la Puesta de Sol",
+    "subtitle": "Syntax Sheriff deja una línea de Python o JavaScript buggeada en tu escritorio. Elige el arreglo, vence el reloj, y marcha tu robot alguacil por el desierto una respuesta correcta a la vez.",
     "ctaPrimary": "Comenzar un Duelo",
     "ctaSecondary": "Ver Cómo Funciona",
     "hudTimerLabel": "Tiempo Restante",
@@ -565,8 +565,8 @@
   },
   "mission": {
     "eyebrow": "Por Qué Syntax Sheriff",
-    "title": "Construido para ojos agudos y manos rápidas",
-    "subtitle": "Sin largas lecciones, sin relleno. Solo fragmentos cortos y honestos con un bug escondido a la vista, y un veredicto en el momento en que te comprometes con una respuesta.",
+    "title": "Hecho para ojos agudos y manos rápidas",
+    "subtitle": "Sin largas lecciones, sin relleno. Solo fragmentos cortos y honestos con un bug escondido a la vista, y un veredicto en el momento que te comprometes con una respuesta.",
     "items": [
       {
         "icon": "clock",
@@ -620,7 +620,7 @@
   "sampleDuel": {
     "eyebrow": "Una Ronda, De Cerca",
     "title": "Esto es lo que llega a tu escritorio",
-    "subtitle": "Una recompensa real del nivel Rookie Rustler, ya dibujada y resuelta, para que veas todo el proceso antes de jugar.",
+    "subtitle": "Una recompensa real del nivel Rookie Rustler, ya dibujada y resuelta, para que veas el ciclo completo antes de jugar.",
     "previewBadge": "Recompensa de Muestra",
     "fileName": "sheriff_badge.py",
     "errorLabel": "SyntaxError: se esperaba ':'",
@@ -628,6 +628,7 @@
     "promptLabel": "Elige el arreglo para la línea 2",
     "explanationTitle": "Por qué esto es incorrecto",
     "verdictLabel": "Veredicto",
+    "explanationLabel": "Ver cómo funciona",
     "options": [
       {
         "id": "A",
@@ -709,7 +710,7 @@
     "languageJavaScript": "JavaScript",
     "correctFeedbackTitle": "Caso cerrado, compañero",
     "wrongFeedbackTitle": "Esa solución no da en el blanco",
-    "timeoutFeedbackTitle": "El reloj se agotó antes de que dispararas",
+    "timeoutFeedbackTitle": "Se acabó el tiempo antes de que dispararas",
     "bountyEarnedLabel": "+{amount} recompensa depositada",
     "explanationTitle": "Por Qué Esto Es Incorrecto",
     "diffBuggyLabel": "Línea con error",
@@ -722,13 +723,13 @@
     "stageCurrentLabel": "Etapa actual",
     "stageClearedAria": "Etapa completada",
     "stageLockedAria": "Etapa bloqueada",
-    "sessionStatsTitle": "Registro de Sesión",
+    "sessionStatsTitle": "Libro Mayor de Sesión",
     "sessionStatsSubtitle": "Sigue tu recompensa total, mejor racha y casos cerrados en esta carrera.",
     "scoreLabel": "Recompensa total",
     "bestStreakLabel": "Mejor racha",
     "casesClearedLabel": "Casos cerrados",
     "fallbackTitle": "Sin casos cargados",
-    "fallbackBody": "La arena de duelo no encontró casos de código. Intenta actualizar la página.",
+    "fallbackBody": "La arena de duelo no pudo encontrar casos de código. Intenta actualizar la página.",
     "stages": [
       "Dusty Trailhead",
       "Cactus Flats",

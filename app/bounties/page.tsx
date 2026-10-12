@@ -65,17 +65,45 @@ function getTierStyle(tier: string): string {
   }
 }
 
-function SegmentedBar({ progress }: { progress: number }) {
+function getTierGlow(tier: string): string {
+  switch (tier) {
+    case "I":
+      return "shadow-[0_0_8px_rgba(99,224,251,0.6)]";
+    case "II":
+      return "shadow-[0_0_8px_rgba(241,192,72,0.6)]";
+    case "III":
+      return "shadow-[0_0_8px_rgba(244,162,97,0.6)]";
+    default:
+      return "shadow-[0_0_8px_rgba(255,180,171,0.6)]";
+  }
+}
+
+function getTierSolidColor(tier: string): string {
+  switch (tier) {
+    case "I":
+      return "bg-[#63e0fb]";
+    case "II":
+      return "bg-[#f1c048]";
+    case "III":
+      return "bg-[#f4a261]";
+    default:
+      return "bg-[#ffb4ab]";
+  }
+}
+
+function SegmentedBar({ progress, tier }: { progress: number; tier: string }) {
   const totalSegments = 10;
   const filled = Math.round((progress / 100) * totalSegments);
+  const solidColor = getTierSolidColor(tier);
+  const glow = getTierGlow(tier);
   return (
     <div className="flex gap-1" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100}>
       {Array.from({ length: totalSegments }).map((_, i) => (
         <div
           key={i}
           className={cn(
-            "h-2 flex-1 rounded-sm transition-colors duration-300",
-            i < filled ? "bg-[#63e0fb]" : "bg-[#3d332d]",
+            "h-2 flex-1 rounded-sm transition-all duration-300",
+            i < filled ? cn(solidColor, glow) : "bg-[#3d332d]",
           )}
         />
       ))}
@@ -108,8 +136,16 @@ export default function BountiesPage() {
     <main className="min-h-screen bg-[#19120d] text-[#f0dfd7]">
       {/* Hero */}
       <Reveal>
-        <section className="border-b border-[#534439]/60 bg-[#19120d] px-4 py-16 sm:px-8 md:py-20">
-          <div className="mx-auto max-w-6xl">
+        <section className="relative overflow-hidden border-b border-[#534439]/60 bg-[#19120d] px-4 py-20 sm:px-8 md:py-28">
+          <div
+            className="pointer-events-none absolute inset-0 opacity-30"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 10% 15%, rgba(99,224,251,0.08), transparent 55%), radial-gradient(circle at 90% 25%, rgba(241,192,72,0.07), transparent 50%)",
+            }}
+            aria-hidden="true"
+          />
+          <div className="relative mx-auto max-w-6xl">
             <span className="inline-block rounded-sm border border-[#ffb4ab]/40 bg-[#93000a]/20 px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#ffb4ab]">
               {t("bounties.hero.eyebrow")}
             </span>
@@ -125,7 +161,7 @@ export default function BountiesPage() {
                 const Icon = SUMMARY_ICONS[stat.id] ?? Star;
                 return (
                   <Reveal key={stat.id} delay={i * 0.06}>
-                    <div className="flex items-center gap-3 rounded-lg border border-[#534439] bg-[#221a15] p-4">
+                    <div className="flex items-center gap-3 rounded-lg border border-[#534439] bg-[#221a15] p-4 shadow-[0_1px_2px_rgba(0,0,0,0.2),0_8px_24px_-8px_rgba(0,0,0,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#f4a261]/40">
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-[#f4a261]/30 bg-[#f4a261]/10 text-[#f4a261]">
                         <Icon className="h-5 w-5" aria-hidden="true" />
                       </div>
@@ -146,9 +182,12 @@ export default function BountiesPage() {
         </section>
       </Reveal>
 
+      {/* gradient-fade divider */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#534439]/70 to-transparent" aria-hidden="true" />
+
       {/* Bounty contract grid */}
       <Reveal>
-        <section className="border-b border-[#534439]/60 bg-[#19120d] px-4 py-16 sm:px-8 md:py-20">
+        <section className="border-b border-[#534439]/60 bg-[#19120d] px-4 py-20 sm:px-8 md:py-28">
           <div className="mx-auto max-w-6xl">
             <span className="font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#f1c048]">
               {t("bounties.gridTitle")}
@@ -168,20 +207,21 @@ export default function BountiesPage() {
                       type="button"
                       onClick={() => setSelectedId(item.id)}
                       className={cn(
-                        "group flex h-full w-full flex-col gap-4 rounded-lg border border-[#534439] bg-[#261e19] p-6 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-[#f4a261]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4a261]",
+                        "group flex h-full w-full flex-col gap-4 rounded-lg border border-[#534439] bg-[#261e19] p-6 text-left shadow-[0_1px_2px_rgba(0,0,0,0.2),0_8px_24px_-8px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.015] hover:border-[#f4a261]/50 hover:shadow-[0_4px_10px_rgba(0,0,0,0.25),0_16px_32px_-10px_rgba(244,162,97,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4a261]",
                         i === 3 && "sm:flex-row sm:items-center sm:justify-between",
                       )}
                     >
                       <div className={cn("flex items-start justify-between gap-3", i === 3 && "sm:flex-1")}>
                         <div className="flex items-center gap-3">
-                          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-[#534439] bg-[#19120d] text-[#f4a261]">
+                          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-[#534439] bg-[#19120d] text-[#f4a261] transition-transform duration-300 group-hover:scale-110">
                             <Icon className="h-5 w-5" aria-hidden="true" />
                           </div>
                           <div>
                             <span
                               className={cn(
-                                "inline-block rounded-sm border px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-[0.1em]",
+                                "inline-block rounded-sm border px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-[0.1em] transition-shadow duration-300",
                                 getTierStyle(item.tier),
+                                "group-hover:" + getTierGlow(item.tier).replace("shadow-", "shadow-"),
                               )}
                             >
                               {t("bounties.cardTierLabel", { tier: item.tier })}
@@ -211,9 +251,9 @@ export default function BountiesPage() {
                             {item.reward}
                           </span>
                         </div>
-                        <span className="inline-flex items-center gap-1 font-mono text-xs font-semibold uppercase tracking-[0.06em] text-[#f4a261] group-hover:text-[#63e0fb]">
+                        <span className="inline-flex items-center gap-1 font-mono text-xs font-semibold uppercase tracking-[0.06em] text-[#f4a261] transition-colors duration-300 group-hover:text-[#63e0fb]">
                           {t("bounties.cardViewDetails")}
-                          <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />
+                          <ChevronRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden="true" />
                         </span>
                       </div>
                     </button>
@@ -225,9 +265,12 @@ export default function BountiesPage() {
         </section>
       </Reveal>
 
+      {/* gradient-fade divider */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#534439]/70 to-transparent" aria-hidden="true" />
+
       {/* Tier progression ladder */}
       <Reveal>
-        <section className="border-b border-[#534439]/60 bg-[#221a15] px-4 py-16 sm:px-8 md:py-20">
+        <section className="border-b border-[#534439]/60 bg-[#221a15] px-4 py-20 sm:px-8 md:py-28">
           <div className="mx-auto max-w-6xl">
             <span className="font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#63e0fb]">
               {t("bounties.ladderTitle")}
@@ -239,15 +282,22 @@ export default function BountiesPage() {
               {t("bounties.ladderSubtitle")}
             </p>
 
-            <div className="relative mt-12 flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
-              <div className="absolute left-0 right-0 top-5 hidden h-px bg-[#534439] sm:block" aria-hidden="true" />
+            <div className="relative mt-14 flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
+              <div
+                className="absolute left-0 right-0 top-5 hidden h-px sm:block"
+                style={{
+                  background:
+                    "linear-gradient(90deg, #534439 0%, #f1c048 35%, #f1c048 65%, #534439 100%)",
+                }}
+                aria-hidden="true"
+              />
               {ladder.map((rung, i) => (
                 <Reveal key={rung.tier} delay={i * 0.07} className="relative flex flex-1 flex-col items-center gap-3 text-center">
                   <div
                     className={cn(
-                      "relative z-10 flex h-10 w-10 items-center justify-center rounded-full border-2",
+                      "relative z-10 flex h-10 w-10 items-center justify-center rounded-full border-2 transition-all duration-300",
                       rung.unlocked
-                        ? "border-[#f1c048] bg-[#f1c048]/15 text-[#f1c048]"
+                        ? "border-[#f1c048] bg-[#f1c048]/15 text-[#f1c048] shadow-[0_0_14px_rgba(241,192,72,0.55)]"
                         : "border-[#534439] bg-[#19120d] text-[#a08d80]",
                     )}
                   >
@@ -270,9 +320,12 @@ export default function BountiesPage() {
         </section>
       </Reveal>
 
+      {/* gradient-fade divider */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#534439]/70 to-transparent" aria-hidden="true" />
+
       {/* Badge gallery */}
       <Reveal>
-        <section className="border-b border-[#534439]/60 bg-[#19120d] px-4 py-16 sm:px-8 md:py-20">
+        <section className="border-b border-[#534439]/60 bg-[#19120d] px-4 py-20 sm:px-8 md:py-28">
           <div className="mx-auto max-w-6xl">
             <span className="font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#f4a261]">
               {t("bounties.badgeTitle")}
@@ -289,17 +342,17 @@ export default function BountiesPage() {
                 <Reveal key={badge.id} delay={i * 0.05}>
                   <div
                     className={cn(
-                      "flex h-full flex-col items-center gap-2 rounded-lg border p-4 text-center transition-all duration-300",
+                      "flex h-full flex-col items-center gap-2 rounded-lg border p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03]",
                       badge.earned
-                        ? "border-[#f1c048]/50 bg-[#f1c048]/5 shadow-[0_0_16px_rgba(241,192,72,0.15)]"
-                        : "border-[#3d332d] bg-[#221a15] opacity-70",
+                        ? "border-[#f1c048]/50 bg-[#f1c048]/5 shadow-[0_0_18px_rgba(241,192,72,0.2)] hover:shadow-[0_0_26px_rgba(241,192,72,0.35)]"
+                        : "border-[#3d332d] bg-[#221a15] opacity-70 hover:opacity-90",
                     )}
                   >
                     <div
                       className={cn(
-                        "flex h-10 w-10 items-center justify-center rounded-full border",
+                        "flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-300",
                         badge.earned
-                          ? "border-[#f1c048] text-[#f1c048]"
+                          ? "border-[#f1c048] text-[#f1c048] shadow-[0_0_10px_rgba(241,192,72,0.5)]"
                           : "border-[#534439] text-[#a08d80]",
                       )}
                     >
@@ -323,10 +376,13 @@ export default function BountiesPage() {
         </section>
       </Reveal>
 
+      {/* gradient-fade divider */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#f1c048]/30 to-transparent" aria-hidden="true" />
+
       {/* CTA banner */}
       <Reveal>
-        <section className="bg-[#221a15] px-4 py-16 sm:px-8 md:py-20">
-          <div className="mx-auto max-w-6xl rounded-lg border-2 border-[#f1c048] bg-[#19120d] p-8 shadow-[0_0_24px_rgba(249,199,79,0.15)] sm:p-10">
+        <section className="bg-[#221a15] px-4 py-20 sm:px-8 md:py-28">
+          <div className="mx-auto max-w-6xl rounded-lg border-2 border-[#f1c048] bg-[#19120d] p-8 shadow-[0_0_28px_rgba(249,199,79,0.18)] sm:p-10">
             <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
               <div>
                 <span className="font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-[#f1c048]">
@@ -342,7 +398,7 @@ export default function BountiesPage() {
               <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
                 <Link
                   href="/duel"
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md border-b-[3px] border-[#6f3800] bg-[#f4a261] px-6 py-3 font-[Space_Grotesk,sans-serif] text-sm font-bold uppercase tracking-[0.06em] text-[#2f1400] transition-all duration-150 hover:brightness-105 active:translate-y-[2px] active:border-b-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#63e0fb]"
+                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md border-b-[3px] border-[#6f3800] bg-[#f4a261] px-6 py-3 font-[Space_Grotesk,sans-serif] text-sm font-bold uppercase tracking-[0.06em] text-[#2f1400] transition-all duration-150 hover:brightness-105 hover:shadow-[0_0_20px_rgba(244,162,97,0.35)] active:translate-y-[2px] active:border-b-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#63e0fb]"
                 >
                   {t("bounties.ctaPrimary")}
                 </Link>
@@ -362,22 +418,23 @@ export default function BountiesPage() {
       <AnimatePresence>
         {selected && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-[#140d08]/85 px-4 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-[#140d08]/85 px-4 backdrop-blur-md"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
             onClick={() => setSelectedId(null)}
           >
             <motion.div
               role="dialog"
               aria-modal="true"
               aria-label={selected.name}
-              initial={{ opacity: 0, scale: 0.95, y: 16 }}
+              initial={{ opacity: 0, scale: 0.94, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 16 }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
+              exit={{ opacity: 0, scale: 0.94, y: 20 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
               onClick={(e) => e.stopPropagation()}
-              className="w-full max-w-lg rounded-lg border-2 border-[#f1c048] bg-[#19120d] p-6 shadow-[0_0_24px_rgba(249,199,79,0.25)] sm:p-8"
+              className="w-full max-w-lg rounded-xl border-2 border-[#f1c048] bg-[#19120d]/95 p-6 shadow-[0_8px_32px_rgba(0,0,0,0.5),0_0_32px_rgba(249,199,79,0.3)] backdrop-blur-xl sm:p-8"
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
@@ -385,6 +442,7 @@ export default function BountiesPage() {
                     className={cn(
                       "inline-block rounded-sm border px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-[0.1em]",
                       getTierStyle(selected.tier),
+                      getTierGlow(selected.tier),
                     )}
                   >
                     {t("bounties.cardTierLabel", { tier: selected.tier })}
@@ -408,7 +466,7 @@ export default function BountiesPage() {
               </p>
 
               <div className="mt-6 grid grid-cols-2 gap-4">
-                <div className="rounded-md border border-[#3d332d] bg-[#221a15] p-4">
+                <div className="rounded-md border border-[#3d332d] bg-[#221a15]/80 p-4 backdrop-blur-sm">
                   <span className="block font-mono text-[10px] uppercase tracking-[0.08em] text-[#a08d80]">
                     {t("bounties.modal.rewardLabel")}
                   </span>
@@ -416,7 +474,7 @@ export default function BountiesPage() {
                     {selected.reward}
                   </span>
                 </div>
-                <div className="rounded-md border border-[#3d332d] bg-[#221a15] p-4">
+                <div className="rounded-md border border-[#3d332d] bg-[#221a15]/80 p-4 backdrop-blur-sm">
                   <span className="block font-mono text-[10px] uppercase tracking-[0.08em] text-[#a08d80]">
                     {t("bounties.modal.requirementLabel")}
                   </span>
@@ -442,7 +500,7 @@ export default function BountiesPage() {
                     {selected.earned ? t("bounties.modal.statusEarned") : t("bounties.modal.statusActive")}
                   </span>
                 </div>
-                <SegmentedBar progress={selected.progress} />
+                <SegmentedBar progress={selected.progress} tier={selected.tier} />
               </div>
             </motion.div>
           </motion.div>

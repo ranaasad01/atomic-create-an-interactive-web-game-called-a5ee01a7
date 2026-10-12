@@ -653,7 +653,8 @@
         "correct": false,
         "note": "Python has no then keyword. The condition goes straight into the colon."
       }
-    ]
+    ],
+    "explanationLabel": "See how it works"
   },
   "trail": {
     "eyebrow": "Your Progress",
