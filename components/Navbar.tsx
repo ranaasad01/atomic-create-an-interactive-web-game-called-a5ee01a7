@@ -1,5 +1,6 @@
 "use client";
-import { MouseEvent, useState } from 'react';
+
+import { MouseEvent, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
@@ -50,8 +51,8 @@ export default function Navbar() {
             <span className="font-sans text-base font-bold uppercase tracking-tight text-[#f0dfd7] transition-colors group-hover:text-[#ffc499]">
               {APP_NAME}
             </span>
-            <span className="hidden font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-[#a08d80] sm:block">
-              [{APP_VERSION_TAG}]
+            <span className="hidden font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-[#63e0fb]/60 sm:block">
+              ⟨{APP_VERSION_TAG}⟩
             </span>
           </span>
         </Link>

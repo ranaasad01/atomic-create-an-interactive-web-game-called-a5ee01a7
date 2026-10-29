@@ -148,8 +148,10 @@ export default function HomePage() {
                   href="/duel"
                   className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-7 py-3.5 text-sm font-semibold text-black shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.4)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_1px_2px_rgba(0,0,0,0.04),0_16px_32px_-8px_var(--accent)] hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]"
                 >
-                  {t("hero.ctaPrimary")}
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  <span className="flex items-center gap-2">
+                    <span>{t("hero.ctaPrimary")}</span>
+                    <span className="inline-flex items-center justify-center rounded-full bg-black/20 p-0.5"><ArrowRight className="h-3.5 w-3.5" aria-hidden="true" /></span>
+                  </span>
                 </Link>
                 <Link
                   href="/how-it-works"
