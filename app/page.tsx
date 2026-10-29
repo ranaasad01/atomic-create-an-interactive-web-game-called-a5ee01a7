@@ -139,7 +139,7 @@ export default function HomePage() {
                     color: "#d946ef",
                     backgroundColor: "#ffffff",
                     fontSize: "16px"
-                  }}>{t("hero.title")}</span>
+                  }}>Sketch Your Solution Before Dusk</span>
               </h1>
               <p className="mt-6 max-w-lg text-pretty text-lg leading-relaxed text-[hsl(var(--muted-foreground))]">
                 {t("hero.subtitle")}
