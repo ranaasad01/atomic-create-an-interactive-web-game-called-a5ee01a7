@@ -184,7 +184,7 @@ export default function HomePage() {
                       if num &gt; 0
                     </span>
                   </div>
-                  <div className="mt-2 flex items-center gap-1.5 text-xs font-medium text-red-400">
+                  <div className="mt-2 flex items-center gap-1.5 text-xs font-medium text-blue-400">
                     <AlertTriangle className="h-3.5 w-3.5" aria-hidden="true" />
                     {t("hero.hudBugLabel")} · {t("hero.hudLineLabel")}
                   </div>
@@ -336,7 +336,7 @@ export default function HomePage() {
                     className={cn(
                       "rounded px-3 py-1.5",
                       i === 1
-                        ? "bg-red-500/10 text-red-300 shadow-[0_0_16px_-8px_rgba(239,68,68,0.5)]"
+                        ? "bg-blue-500/10 text-blue-300 shadow-[0_0_16px_-8px_rgba(239,68,68,0.5)]"
                         : "text-white/80",
                     )}>
                     <span className="mr-4 select-none text-white/30">{i + 1}</span>

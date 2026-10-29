@@ -43,13 +43,13 @@ const HOTKEY_LABELS: string[] = ["1", "2", "3", "4"];
 function getTimerColorClasses(fraction: number): string {
   if (fraction > 0.6) return "bg-cyan-400";
   if (fraction > 0.3) return "bg-amber-400";
-  return "bg-red-500";
+  return "bg-blue-500";
 }
 
 function getTimerGlowClasses(fraction: number): string {
   if (fraction > 0.6) return "shadow-[0_0_8px_0_rgba(34,211,238,0.6)]";
   if (fraction > 0.3) return "shadow-[0_0_8px_0_rgba(251,191,36,0.6)]";
-  return "shadow-[0_0_10px_1px_rgba(239,68,68,0.7)] text-red-500 pulse-glow";
+  return "shadow-[0_0_10px_1px_rgba(239,68,68,0.7)] text-blue-500 pulse-glow";
 }
 
 export default function DuelPage() {
@@ -252,14 +252,14 @@ export default function DuelPage() {
                   <span
                     className={cn(
                       "rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide",
-                      currentSnippet.difficulty === "beginner" && "bg-emerald-500/10 text-emerald-500",
+                      currentSnippet.difficulty === "beginner" && "bg-cyan-500/10 text-cyan-500",
                       currentSnippet.difficulty === "intermediate" && "bg-amber-500/10 text-amber-500",
                       currentSnippet.difficulty === "advanced" && "bg-rose-500/10 text-rose-500",
                     )}
                   >
                     {difficultyLabels[currentSnippet.difficulty]}
                   </span>
-                  <span className="ml-auto inline-flex items-center gap-1 rounded-full bg-red-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-red-500 shadow-[0_0_8px_-2px_rgba(239,68,68,0.5)]">
+                  <span className="ml-auto inline-flex items-center gap-1 rounded-full bg-blue-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-blue-500 shadow-[0_0_8px_-2px_rgba(239,68,68,0.5)]">
                     <AlertTriangle className="h-3 w-3" aria-hidden="true" />
                     {currentSnippet.errorLabel}
                   </span>
@@ -274,22 +274,22 @@ export default function DuelPage() {
                         key={`${currentSnippet.id}-line-${idx}`}
                         className={cn(
                           "flex gap-4 rounded px-2 py-0.5",
-                          isBuggy && "border-l-4 border-red-500 bg-red-500/10 shadow-[inset_0_0_12px_-6px_rgba(239,68,68,0.6)]",
+                          isBuggy && "border-l-4 border-blue-500 bg-blue-500/10 shadow-[inset_0_0_12px_-6px_rgba(239,68,68,0.6)]",
                         )}
                       >
                         <span className="w-5 shrink-0 select-none text-right text-[hsl(var(--muted-foreground))]">
                           {lineNumber}
                         </span>
-                        <span className={cn("whitespace-pre", isBuggy ? "text-red-500" : "text-[hsl(var(--foreground))]")}>
+                        <span className={cn("whitespace-pre", isBuggy ? "text-blue-500" : "text-[hsl(var(--foreground))]")}>
                           {line}
                         </span>
-                        {isBuggy && <AlertTriangle className="h-4 w-4 shrink-0 text-red-500" aria-hidden="true" />}
+                        {isBuggy && <AlertTriangle className="h-4 w-4 shrink-0 text-blue-500" aria-hidden="true" />}
                       </div>
                     );
                   })}
                 </pre>
 
-                <div className="border-t border-[hsl(var(--border))] bg-black/10 px-4 py-3 font-mono text-xs text-red-500">
+                <div className="border-t border-[hsl(var(--border))] bg-black/10 px-4 py-3 font-mono text-xs text-blue-500">
                   {currentSnippet.consoleError}
                 </div>
               </div>
@@ -299,10 +299,10 @@ export default function DuelPage() {
               <div className="mb-4">
                 <div className="mb-2 flex items-center justify-between text-xs text-[hsl(var(--muted-foreground))]">
                   <span className="inline-flex items-center gap-1.5">
-                    <Clock className={cn("h-3.5 w-3.5", isTimerLow && "text-red-500")} aria-hidden="true" />
+                    <Clock className={cn("h-3.5 w-3.5", isTimerLow && "text-blue-500")} aria-hidden="true" />
                     {t("duel.timerLabel")}
                   </span>
-                  <span className={cn("font-mono", isTimerLow ? "text-red-500" : "text-[hsl(var(--foreground))]")}>{timeLeft}s</span>
+                  <span className={cn("font-mono", isTimerLow ? "text-blue-500" : "text-[hsl(var(--foreground))]")}>{timeLeft}s</span>
                 </div>
                 <div className="flex gap-1">
                   {Array.from({ length: TIMER_SEGMENT_COUNT }, (_, i) => (
@@ -334,8 +334,8 @@ export default function DuelPage() {
                         "group relative rounded-xl border p-3 text-left font-mono text-xs transition-all duration-300 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--accent)]",
                         !answered &&
                           "border-[hsl(var(--border))] bg-[hsl(var(--card))] hover:-translate-y-1 hover:border-[var(--accent)]/50 hover:shadow-[0_12px_28px_-10px_rgba(0,0,0,0.35),0_0_16px_-4px_rgba(99,224,251,0.3)]",
-                        showCorrect && "border-emerald-500 bg-emerald-500/10 shadow-[0_0_20px_-4px_rgba(16,185,129,0.6)]",
-                        showWrongSelected && "border-red-500 bg-red-500/10 shadow-[0_0_20px_-4px_rgba(239,68,68,0.6)]",
+                        showCorrect && "border-cyan-500 bg-cyan-500/10 shadow-[0_0_20px_-4px_rgba(16,185,129,0.6)]",
+                        showWrongSelected && "border-blue-500 bg-blue-500/10 shadow-[0_0_20px_-4px_rgba(239,68,68,0.6)]",
                         answered && !showCorrect && !showWrongSelected && "border-[hsl(var(--border))] opacity-40",
                       )}
                     >
@@ -346,8 +346,8 @@ export default function DuelPage() {
                         <span className="inline-flex h-5 w-5 items-center justify-center rounded-md border border-[hsl(var(--border))] text-[10px] font-bold text-[hsl(var(--muted-foreground))]">
                           {option.id}
                         </span>
-                        {showCorrect && <Check className="ml-auto h-4 w-4 text-emerald-500" aria-hidden="true" />}
-                        {showWrongSelected && <X className="ml-auto h-4 w-4 text-red-500" aria-hidden="true" />}
+                        {showCorrect && <Check className="ml-auto h-4 w-4 text-cyan-500" aria-hidden="true" />}
+                        {showWrongSelected && <X className="ml-auto h-4 w-4 text-blue-500" aria-hidden="true" />}
                       </span>
                       <span className="block whitespace-pre-wrap break-words text-[hsl(var(--foreground))]">{option.code}</span>
                     </button>
@@ -447,8 +447,8 @@ export default function DuelPage() {
                 <div className="mt-3 text-3xl font-bold">{bestStreak}</div>
                 <div className="mt-1 text-sm text-[hsl(var(--muted-foreground))]">{t("duel.bestStreakLabel")}</div>
               </div>
-              <div className="rounded-2xl border border-emerald-500/20 bg-[hsl(var(--card))] p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.12)] sm:col-span-3">
-                <Check className="h-5 w-5 text-emerald-500" aria-hidden="true" />
+              <div className="rounded-2xl border border-cyan-500/20 bg-[hsl(var(--card))] p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.12)] sm:col-span-3">
+                <Check className="h-5 w-5 text-cyan-500" aria-hidden="true" />
                 <div className="mt-3 text-3xl font-bold">{casesCleared}</div>
                 <div className="mt-1 text-sm text-[hsl(var(--muted-foreground))]">{t("duel.casesClearedLabel")}</div>
               </div>
@@ -478,9 +478,9 @@ export default function DuelPage() {
               <div
                 className={cn(
                   "mb-4 flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold",
-                  isTimeout && "bg-red-500/10 text-red-500 shadow-[0_0_16px_-6px_rgba(239,68,68,0.5)]",
-                  !isTimeout && selectedId && currentSnippet.options.find((o) => o.id === selectedId)?.isCorrect && "bg-emerald-500/10 text-emerald-500 shadow-[0_0_16px_-6px_rgba(16,185,129,0.5)]",
-                  !isTimeout && selectedId && !currentSnippet.options.find((o) => o.id === selectedId)?.isCorrect && "bg-red-500/10 text-red-500 shadow-[0_0_16px_-6px_rgba(239,68,68,0.5)]",
+                  isTimeout && "bg-blue-500/10 text-blue-500 shadow-[0_0_16px_-6px_rgba(239,68,68,0.5)]",
+                  !isTimeout && selectedId && currentSnippet.options.find((o) => o.id === selectedId)?.isCorrect && "bg-cyan-500/10 text-cyan-500 shadow-[0_0_16px_-6px_rgba(16,185,129,0.5)]",
+                  !isTimeout && selectedId && !currentSnippet.options.find((o) => o.id === selectedId)?.isCorrect && "bg-blue-500/10 text-blue-500 shadow-[0_0_16px_-6px_rgba(239,68,68,0.5)]",
                 )}
               >
                 {isTimeout ? (
@@ -507,11 +507,11 @@ export default function DuelPage() {
               </h3>
 
               <div className="mt-4 space-y-1.5 rounded-xl border border-[hsl(var(--border))]/60 bg-black/20 p-4 font-mono text-xs">
-                <div className="flex gap-2 text-red-500">
+                <div className="flex gap-2 text-blue-500">
                   <span>-</span>
                   <span>{currentSnippet.lines[currentSnippet.buggyLineNumber - 1] ?? ""}</span>
                 </div>
-                <div className="flex gap-2 text-emerald-500">
+                <div className="flex gap-2 text-cyan-500">
                   <span>+</span>
                   <span>{correctOption?.code ?? ""}</span>
                 </div>
