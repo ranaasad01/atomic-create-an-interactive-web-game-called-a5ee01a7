@@ -108,26 +108,21 @@ export default function HomePage() {
     <main className="bg-[var(--background)] text-[var(--foreground)]">
       {/* HERO — split, image-backed HUD panel */}
       <Reveal>
-        <section
-          id="hero"
-          className="relative overflow-hidden border-b border-[hsl(var(--border))] py-28 md:py-36"
-        >
+        <section id="hero" className="relative overflow-hidden border-b border-[hsl(var(--border))] py-28 md:py-36">
           <div className="pointer-events-none absolute inset-0 -z-10">
             <div
               className="absolute inset-0 opacity-70"
               style={{
                 backgroundImage:
                   "radial-gradient(circle at 12% 8%, rgba(99,224,251,0.14), transparent 55%), radial-gradient(circle at 88% 18%, rgba(244,162,97,0.10), transparent 50%), radial-gradient(circle at 50% 100%, rgba(9,9,11,0.9), transparent 60%)",
-              }}
-            />
+              }} />
             <div
               className="absolute inset-0 opacity-[0.05]"
               style={{
                 backgroundImage:
                   "linear-gradient(rgba(240,223,215,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(240,223,215,0.4) 1px, transparent 1px)",
                 backgroundSize: "48px 48px",
-              }}
-            />
+              }} />
             <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-[var(--accent)]/10 blur-3xl" />
             <div className="absolute -right-16 bottom-0 h-80 w-80 rounded-full bg-[var(--card)] blur-3xl" />
           </div>
@@ -138,25 +133,25 @@ export default function HomePage() {
                 {t("hero.eyebrow")}
               </span>
               <h1 className="mt-6 text-balance text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
-                <span className="text-gradient-accent">{t("hero.title")}</span>
+                <span
+                  className="text-gradient-accent"
+                  style={{
+                    color: "#d946ef",
+                    backgroundColor: "#ffffff",
+                    fontSize: "16px"
+                  }}>{t("hero.title")}</span>
               </h1>
               <p className="mt-6 max-w-lg text-pretty text-lg leading-relaxed text-[hsl(var(--muted-foreground))]">
                 {t("hero.subtitle")}
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-4">
-                <Link
-                  href="/duel"
-                  className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-7 py-3.5 text-sm font-semibold text-black shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.4)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_1px_2px_rgba(0,0,0,0.04),0_16px_32px_-8px_var(--accent)] hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]"
-                >
+                <Link href="/duel" className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-7 py-3.5 text-sm font-semibold text-black shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.4)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_1px_2px_rgba(0,0,0,0.04),0_16px_32px_-8px_var(--accent)] hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]">
                   <span className="flex items-center gap-2">
                     <span>{t("hero.ctaPrimary")}</span>
                     <span className="inline-flex items-center justify-center rounded-full bg-black/20 p-0.5"><ArrowRight className="h-3.5 w-3.5" aria-hidden="true" /></span>
                   </span>
                 </Link>
-                <Link
-                  href="/how-it-works"
-                  className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--border))] px-7 py-3.5 text-sm font-semibold transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-[var(--accent)]/40 hover:text-[var(--accent)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]"
-                >
+                <Link href="/how-it-works" className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--border))] px-7 py-3.5 text-sm font-semibold transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-[var(--accent)]/40 hover:text-[var(--accent)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]">
                   {t("hero.ctaSecondary")}
                 </Link>
               </div>
@@ -167,11 +162,7 @@ export default function HomePage() {
 
             <div className="relative">
               <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_32px_64px_-16px_rgba(0,0,0,0.6),0_0_48px_-16px_rgba(99,224,251,0.15)] transition-transform duration-500 ease-out hover:-translate-y-1">
-                <img
-                  src="https://titoaistorageaccount.blob.core.windows.net/titoai-storage/site-images/1ec1950184624b6e91ca071361574917.jpg"
-                  alt="Sunset over a desert canyon, the setting for Syntax Sheriff duels"
-                  className="h-80 w-full object-cover sm:h-96"
-                />
+                <img src="https://titoaistorageaccount.blob.core.windows.net/titoai-storage/site-images/1ec1950184624b6e91ca071361574917.jpg" alt="Sunset over a desert canyon, the setting for Syntax Sheriff duels" className="h-80 w-full object-cover sm:h-96" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
                 <div className="absolute inset-x-5 bottom-5 rounded-xl border border-white/10 bg-black/60 p-4 backdrop-blur-md shadow-[0_8px_24px_-8px_rgba(0,0,0,0.5)]">
                   <div className="flex items-center justify-between text-[11px] font-semibold uppercase tracking-widest text-white/60">
@@ -195,12 +186,7 @@ export default function HomePage() {
                     {t("hero.hudBugLabel")} · {t("hero.hudLineLabel")}
                   </div>
                 </div>
-                <motion.div
-                  initial={{ x: -12, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-                  className="absolute left-5 top-5 flex h-11 w-11 items-center justify-center rounded-full border border-[var(--accent)]/40 bg-black/50 text-[var(--accent)] shadow-[0_0_20px_-4px_var(--accent)] backdrop-blur-md"
-                >
+                <motion.div initial={{ x: -12, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }} className="absolute left-5 top-5 flex h-11 w-11 items-center justify-center rounded-full border border-[var(--accent)]/40 bg-black/50 text-[var(--accent)] shadow-[0_0_20px_-4px_var(--accent)] backdrop-blur-md">
                   <Sparkles className="h-5 w-5" aria-hidden="true" />
                 </motion.div>
               </div>
@@ -208,7 +194,6 @@ export default function HomePage() {
           </div>
         </section>
       </Reveal>
-
       {/* MISSION — bento grid */}
       <Reveal delay={0.08}>
         <section className="relative border-b border-[hsl(var(--border))] py-24 md:py-32">
@@ -238,8 +223,7 @@ export default function HomePage() {
                     className={cn(
                       "glass-panel glow-border group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-[var(--card)]/60 p-7 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_12px_32px_-12px_rgba(0,0,0,0.5)] transition-all duration-300 ease-out hover:border-[var(--accent)]/30 hover:shadow-[0_1px_2px_rgba(0,0,0,0.04),0_20px_40px_-12px_rgba(99,224,251,0.15)]",
                       span,
-                    )}
-                  >
+                    )}>
                     <div>
                       <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--accent)]/30 bg-[var(--accent)]/10 text-[var(--accent)] shadow-[0_0_20px_-6px_var(--accent)]">
                         <Icon className="h-5 w-5" aria-hidden="true" />
@@ -256,7 +240,6 @@ export default function HomePage() {
           </div>
         </section>
       </Reveal>
-
       {/* ANATOMY — vertical step list */}
       <Reveal delay={0.1}>
         <section className="relative border-b border-[hsl(var(--border))] bg-[var(--card)]/40 py-24 md:py-32">
@@ -272,12 +255,7 @@ export default function HomePage() {
 
             <ol className="space-y-4">
               {anatomySteps.map((step, i) => (
-                <motion.li
-                  key={step.title}
-                  whileHover={{ x: 4 }}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="glass-panel flex items-start gap-5 rounded-2xl border border-white/10 bg-[var(--card)]/70 p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.4)] transition-all duration-300 ease-out hover:border-[var(--accent)]/30"
-                >
+                <motion.li key={step.title} whileHover={{ x: 4 }} transition={{ duration: 0.2, ease: "easeOut" }} className="glass-panel flex items-start gap-5 rounded-2xl border border-white/10 bg-[var(--card)]/70 p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-8px_rgba(0,0,0,0.4)] transition-all duration-300 ease-out hover:border-[var(--accent)]/30">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[var(--accent)]/40 bg-[var(--accent)]/10 font-mono text-sm font-bold text-[var(--accent)]">
                     {step.step ?? i + 1}
                   </span>
@@ -293,7 +271,6 @@ export default function HomePage() {
           </div>
         </section>
       </Reveal>
-
       {/* SAMPLE DUEL — interactive snippet preview */}
       <Reveal delay={0.12}>
         <section className="relative border-b border-[hsl(var(--border))] py-24 md:py-32">
@@ -313,19 +290,16 @@ export default function HomePage() {
               </p>
 
               <div className="mt-8 grid grid-cols-2 gap-3">
-                {snippetOptions.map((opt) => (
-                  <div
-                    key={opt.id}
-                    className={cn(
-                      "rounded-xl border px-4 py-3 font-mono text-sm transition-all duration-300 ease-out",
-                      opt.correct
-                        ? "border-[var(--accent)]/50 bg-[var(--accent)]/10 text-[var(--accent)] shadow-[0_0_20px_-8px_var(--accent)]"
-                        : "border-white/10 bg-[var(--card)]/50 text-[hsl(var(--muted-foreground))]",
-                    )}
-                  >
-                    {opt.code}
-                  </div>
-                ))}
+                {snippetOptions.map((opt) => (<div
+                  key={opt.id}
+                  className={cn(
+                    "rounded-xl border px-4 py-3 font-mono text-sm transition-all duration-300 ease-out",
+                    opt.correct
+                      ? "border-[var(--accent)]/50 bg-[var(--accent)]/10 text-[var(--accent)] shadow-[0_0_20px_-8px_var(--accent)]"
+                      : "border-white/10 bg-[var(--card)]/50 text-[hsl(var(--muted-foreground))]",
+                  )}>
+                  {opt.code}
+                </div>))}
               </div>
 
               {correctOption && (
@@ -361,8 +335,7 @@ export default function HomePage() {
                       i === 1
                         ? "bg-red-500/10 text-red-300 shadow-[0_0_16px_-8px_rgba(239,68,68,0.5)]"
                         : "text-white/80",
-                    )}
-                  >
+                    )}>
                     <span className="mr-4 select-none text-white/30">{i + 1}</span>
                     {line}
                   </div>
@@ -372,7 +345,6 @@ export default function HomePage() {
           </div>
         </section>
       </Reveal>
-
       {/* TRAIL — robot progress stage */}
       <Reveal delay={0.1}>
         <section className="relative border-b border-[hsl(var(--border))] bg-[var(--card)]/40 py-24 md:py-32">
@@ -395,8 +367,7 @@ export default function HomePage() {
                 style={{
                   backgroundImage:
                     "radial-gradient(circle at 20% 100%, rgba(244,162,97,0.15), transparent 50%)",
-                }}
-              />
+                }} />
               <div className="relative flex items-center justify-between">
                 <div className="absolute left-0 right-0 top-1/2 h-0.5 -translate-y-1/2 bg-gradient-to-r from-transparent via-[hsl(var(--border))] to-transparent" />
                 {trailStages.map((stage, i) => {
@@ -413,8 +384,7 @@ export default function HomePage() {
                             "border-[var(--accent)] bg-[var(--accent)] text-black shadow-[0_0_32px_-4px_var(--accent)]",
                           stage.status === "locked" &&
                             "border-[hsl(var(--border))] bg-[var(--card)] text-[hsl(var(--muted-foreground))]",
-                        )}
-                      >
+                        )}>
                         {isCurrent ? (
                           <RobotMascot className="h-6 w-6" />
                         ) : stage.status === "locked" ? (
@@ -427,8 +397,7 @@ export default function HomePage() {
                         className={cn(
                           "max-w-[5.5rem] text-center text-[11px] font-medium leading-tight",
                           isCurrent ? "text-[var(--accent)]" : "text-[hsl(var(--muted-foreground))]",
-                        )}
-                      >
+                        )}>
                         {stage.label}
                       </span>
                     </div>
@@ -439,7 +408,6 @@ export default function HomePage() {
           </div>
         </section>
       </Reveal>
-
       {/* BOUNTIES — tier pricing-style cards */}
       <Reveal delay={0.1}>
         <section className="relative py-24 md:py-32">
@@ -468,8 +436,7 @@ export default function HomePage() {
                     i === 1
                       ? "border-[var(--accent)]/50 bg-[var(--accent)]/[0.07] shadow-[0_0_48px_-16px_rgba(99,224,251,0.3)]"
                       : "border-white/10 bg-[var(--card)]/60 hover:border-[var(--accent)]/30",
-                  )}
-                >
+                  )}>
                   <div className="flex items-center justify-between">
                     <h3 className="text-lg font-semibold tracking-tight">{tier.name}</h3>
                     <span className="rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/10 px-2.5 py-1 font-mono text-xs text-[var(--accent)]">
@@ -490,10 +457,7 @@ export default function HomePage() {
             </div>
 
             <div className="mt-14 flex justify-center">
-              <Link
-                href="/bounties"
-                className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--border))] px-7 py-3.5 text-sm font-semibold transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-[var(--accent)]/40 hover:text-[var(--accent)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]"
-              >
+              <Link href="/bounties" className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--border))] px-7 py-3.5 text-sm font-semibold transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-[var(--accent)]/40 hover:text-[var(--accent)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]">
                 {t("bounties.ctaLabel")}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
