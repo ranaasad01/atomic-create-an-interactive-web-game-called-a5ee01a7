@@ -138,7 +138,10 @@ export default function HomePage() {
                   style={{
                     color: "#d946ef",
                     backgroundColor: "#ffffff",
-                    fontSize: "16px"
+                    fontSize: "16px",
+                    padding: "64px",
+                    margin: "48px",
+                    borderRadius: "50%"
                   }}>Sketch Your Solution Before Dusk</span>
               </h1>
               <p className="mt-6 max-w-lg text-pretty text-lg leading-relaxed text-[hsl(var(--muted-foreground))]">
